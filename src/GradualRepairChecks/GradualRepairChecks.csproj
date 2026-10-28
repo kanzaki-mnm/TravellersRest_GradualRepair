@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework><LangVersion>latest</LangVersion><GameDir Condition="'$(GameDir)' == ''">$(MSBuildThisFileDirectory)../../sandbox/game</GameDir></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../GradualRepair/Core/RepairModel.cs" Link="RepairModel.cs" />
+    <Compile Include="../GradualRepair/Core/StateStore.cs" Link="StateStore.cs" />
+    <Reference Include="Newtonsoft.Json"><HintPath>$(GameDir)/TravellersRest_Data/Managed/Newtonsoft.Json.dll</HintPath></Reference>
+  </ItemGroup>
+<ItemGroup><Compile Include="../GradualRepair/Gameplay/HygieneRules.cs" Link="HygieneRules.cs" /></ItemGroup><ItemGroup><Compile Include="../GradualRepair/Building/AgedStyleRules.cs" Link="AgedStyleRules.cs" /></ItemGroup><ItemGroup><Compile Include="../GradualRepair/Gameplay/VisitorRules.cs" Link="VisitorRules.cs" /></ItemGroup><ItemGroup><Compile Include="../GradualRepair/Interaction/InteractionGesture.cs" Link="InteractionGesture.cs" /></ItemGroup><ItemGroup><Compile Include="../GradualRepair/Interior/SalvageRules.cs" Link="SalvageRules.cs" /></ItemGroup><ItemGroup><Compile Include="../GradualRepair/Core/RepairCostRules.cs" Link="RepairCostRules.cs" /></ItemGroup><ItemGroup><Compile Include="../GradualRepair/UI/RepairConfirmationData.cs" Link="RepairConfirmationData.cs" /></ItemGroup><ItemGroup><Compile Include="../GradualRepair/UI/RepairPlanData.cs" Link="RepairPlanData.cs" /></ItemGroup><ItemGroup><Compile Include="../GradualRepair/Localization/RepairText.cs" Link="RepairText.cs" /><EmbeddedResource Include="../GradualRepair/Localization/*.json"><LogicalName>GradualRepair.Localization.%(Filename)%(Extension)</LogicalName></EmbeddedResource></ItemGroup></Project>
+
+

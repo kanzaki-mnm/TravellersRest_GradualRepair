@@ -1,0 +1,26 @@
+# Local build output and IDE state
+**/bin/
+**/obj/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Native dependencies and local game/testing data
+sandbox/
+game/
+BepInEx/
+TravellersRest_Data/
+research/
+logs/
+*.log
+*.jsonl
+*.dll
+*.exe
+*.pdb
+*.save
+*.bak
+*.zip
+.env
+.env.*

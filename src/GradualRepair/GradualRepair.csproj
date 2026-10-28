@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework><LangVersion>latest</LangVersion>
+    <AssemblyName>GradualRepair</AssemblyName><Version>0.29.4</Version>
+    <GameDir>$(MSBuildThisFileDirectory)..\..\sandbox\game</GameDir>
+  </PropertyGroup>
+  <ItemGroup><EmbeddedResource Include="../../art/GradualRepair/CounterCleanup/Counter_Damaged_Cleaned.png" LogicalName="Counter_Damaged_Cleaned.png" /></ItemGroup>
+  <ItemGroup><Reference Include="UnityEngine.AudioModule"><HintPath>$(GameDir)/TravellersRest_Data/Managed/UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference></ItemGroup>
+  <ItemGroup><Reference Include="UnityEngine.GridModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.GridModule.dll</HintPath><Private>false</Private></Reference><Reference Include="UnityEngine.TilemapModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.TilemapModule.dll</HintPath><Private>false</Private></Reference><Reference Include="Newtonsoft.Json"><HintPath>$(GameDir)\TravellersRest_Data\Managed\Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath><Private>false</Private></Reference><Reference Include="Unity.TextMeshPro"><HintPath>$(GameDir)\TravellersRest_Data\Managed\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.Physics2DModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp-firstpass"><HintPath>$(GameDir)\TravellersRest_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PhotonUnityNetworking"><HintPath>$(GameDir)\TravellersRest_Data\Managed\PhotonUnityNetworking.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx"><HintPath>$(GameDir)\BepInEx\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(GameDir)\BepInEx\core\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(GameDir)\TravellersRest_Data\Managed\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UIModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.UIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule"><HintPath>$(GameDir)\TravellersRest_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+<ItemGroup><EmbeddedResource Include="../../art/GradualRepair/BuildingTiles/AgedSkirting_*.png"><LogicalName>%(Filename)%(Extension)</LogicalName></EmbeddedResource></ItemGroup><ItemGroup><EmbeddedResource Include="../../art/GradualRepair/BuildingIcons/BuildingIcon/*_Icon.png"><LogicalName>%(Filename)%(Extension)</LogicalName></EmbeddedResource></ItemGroup><ItemGroup><EmbeddedResource Include="../../art/GradualRepair/FloorEdges/Edited/*.png"><LogicalName>AgedEdge.%(Filename)%(Extension)</LogicalName></EmbeddedResource></ItemGroup><ItemGroup><Reference Include="Mono.Cecil"><HintPath>$(GameDir)/BepInEx/core/Mono.Cecil.dll</HintPath><Private>false</Private></Reference><EmbeddedResource Include="Compatibility/NativeContracts.json" LogicalName="GradualRepair.NativeContracts.json" /></ItemGroup><ItemGroup><EmbeddedResource Include="Localization/*.json"><LogicalName>GradualRepair.Localization.%(Filename)%(Extension)</LogicalName></EmbeddedResource></ItemGroup></Project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

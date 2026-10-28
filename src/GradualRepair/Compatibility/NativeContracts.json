@@ -1,0 +1,1369 @@
+[
+  {
+    "Anchors": [
+      {
+        "Type": "CastleFormEvent",
+        "Signature": "CastleFormEvent|System.Void|System.Boolean|True|0|Default",
+        "Body": "847E4450BF28065F84478F99C07A92A9C7D80BF81AD6FA9F708C34E1D8664B92",
+        "Index": 95
+      },
+      {
+        "Type": "ActiveMission",
+        "Signature": "ActiveMission|System.Void|System.Int32|True|0|Default",
+        "Body": "1C7CFB2D8F9A04E185C35CD7E3A6AC46D67405EDED35E4659A112CA7E729D20B",
+        "Index": 34
+      },
+      {
+        "Type": "ActiveMission",
+        "Signature": "ActiveMission|System.Void|System.Int32|True|0|Default",
+        "Body": "F6967D343068DE1F1E2FE6FA175A9FCB486EE4BF880579F857CCCB850D81C15E",
+        "Index": 59
+      },
+      {
+        "Type": "ActiveMission",
+        "Signature": "ActiveMission|System.Void|System.Int32|True|0|Default",
+        "Body": "EF2AE84037A83F7EB5ECC0F2048186DDCD8A86AB67FA37E9D8E48E959191E2F4",
+        "Index": 125
+      },
+      {
+        "Type": "ActiveMission",
+        "Signature": "ActiveMission|System.Void|System.Int32|True|0|Default",
+        "Body": "FC77BF4B909F1FA588D76CC970CB7BA9CB7F7BB6197A840D59A64A1A7FB46DAD",
+        "Index": 125
+      },
+      {
+        "Type": "MagicBookStand",
+        "Signature": "MagicBookStand|System.Void||True|0|Default",
+        "Body": "2F1BD5F9D24544D558AAB00CB6B1E5C7706A70F5C7A441369BBE3586E41C1FC0",
+        "Index": 60
+      },
+      {
+        "Type": "MagicBookStand",
+        "Signature": "MagicBookStand|System.Void||True|0|Default",
+        "Body": "E9C3BD9151C8ACC3C92875F2897D8ACFE74FDEC0F25291A1227C81F56EC90EA0",
+        "Index": 60
+      },
+      {
+        "Type": "AgingRack",
+        "Signature": "AgingRack|System.Void|Slot,Slot|True|0|Default",
+        "Body": "72D26C76D5AE82B0586B0C70FA0F9BD5CB9B53D4C0123FF388070E1D3F570702",
+        "Index": 18
+      }
+    ],
+    "Key": "Item.DNDLBCBNIIA",
+    "Kind": "method",
+    "Name": "BDONINELJBG",
+    "Signature": "Item|ItemInstance||True|0|Default",
+    "Body": "AA9AE39DFB39E6AFCC2B41FE7B17B6FB25091B7944CE7B2F892C13CB4E7FBA5C",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void|DecorationTile|False|0|Default",
+        "Body": "1CCE945EA4D5473F8E836D61E38160065B7DA948CFBE08F359370FF8049255F6",
+        "Index": 79
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void||True|0|Default",
+        "Body": "BC8952A7A01C90D6E711573C94ED99FA3A9D7F56EBD2A6E94D56FF3C2471EEBA",
+        "Index": 41
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void|System.Collections.Generic.HashSet`1<UnityEngine.Vector2>|True|0|Default",
+        "Body": "908C8F30692F085DDAB8559D4B640CEB5EAB6A02FDED95BF146CEAD3DED0CA6B",
+        "Index": 25
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void||True|0|Default",
+        "Body": "916AC68973295AD8F27D3FFA68C8E56BE29EDD6F518C185F6A717A482D419586",
+        "Index": 41
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void||True|0|Default",
+        "Body": "778D56F3F75BE408B0B7EC82C9203FF6B495FA2A9C1EF0500829A41C470D1803",
+        "Index": 36
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void|System.Collections.Generic.HashSet`1<UnityEngine.Vector2>|True|0|Default",
+        "Body": "EAC2290AD51A08E0FBC33F92860DF4968C092E23F22CE408FD49D7E4C159ED50",
+        "Index": 25
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void|System.Collections.Generic.HashSet`1<UnityEngine.Vector2>|True|0|Default",
+        "Body": "52C8229FAE530F04CD7783C95BAA27E4D0A75B0D47143698D7A7A0F95BA1F22C",
+        "Index": 25
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void|System.Collections.Generic.HashSet`1<UnityEngine.Vector2>|True|0|Default",
+        "Body": "F506F66432BF7482E59DC38F465F5A3166462D6BE08FD35EC8A9F7CE676460E3",
+        "Index": 25
+      }
+    ],
+    "Key": "WorldGrid.OANIHJGGBFG",
+    "Kind": "method",
+    "Name": "CIFMBADOKCJ",
+    "Signature": "WorldGrid|System.Boolean|UnityEngine.Vector3,WorldTile&|False|0|Default",
+    "Body": "543A5908EE53002F019E969663ED6D8C55CB988FCB97706431B563F64E3E4F83",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|WorldTile,UnityEngine.Vector3|False|0|Default",
+        "Body": "A0A75E3D52437BA54CACE211BEC2CC5C46C18D311E40BBB30F86666105700879",
+        "Index": 25
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,Season,TilemapScene,System.Boolean|False|0|Default",
+        "Body": "A21A01A1C90A791F26A2FBB3A7CB4D11260F6A4D0C2D5B90DFFD4D78038C1C55",
+        "Index": 224
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,TilemapScene,UnityEngine.Tilemaps.Tilemap[],System.Boolean|False|0|Default",
+        "Body": "742E86D0603A49E498620D4AFA37CFC5079D79D51560B8DB0A4F2C6979CDB544",
+        "Index": 116
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,System.Boolean,System.Int32|False|0|Default",
+        "Body": "18D928C6FDEE066C0F818020A2008A49005B29218B0165ECABA2CD2DC3330C32",
+        "Index": 62
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,Season,TilemapScene,System.Boolean|False|0|Default",
+        "Body": "B7FFFE8167D2938E4BDEFE6E29C1E67D93E0FF236F8DBBF520D799816040B1B0",
+        "Index": 223
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+        "Body": "DB79C1B7D087FFEFC8B887C748E525DA7143CC4BC8EAE3FC7F07823CBEDAF6A5",
+        "Index": 60
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,UnityEngine.Tilemaps.TileBase,DecorationTile,UnityEngine.Tilemaps.Tilemap,System.Boolean|False|0|Default",
+        "Body": "1A1AC2A52223B29AD66FAB74194D4BBE6948334E754A760D0026F734346BB656",
+        "Index": 85
+      }
+    ],
+    "Key": "DecorationTile.GIPNGINGGMC",
+    "Kind": "method",
+    "Name": "OAMGIOAABPJ",
+    "Signature": "DecorationTile|System.Void|UnityEngine.Vector3,UnityEngine.Tilemaps.Tilemap,System.Single,System.Single,System.Boolean,System.Boolean|True|0|Default",
+    "Body": "55298149F53495274E0A78C59F0F0F6B718A81F926D27A372966D9B9DBCA7C9E",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void||False|0|Default",
+        "Body": "81F6923D2C26B9864DD8D725772208B3BDBBD0150F4BF0973F5A8FB0F607CDB6",
+        "Index": 64
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void|DecorationTile|False|0|Default",
+        "Body": "1CCE945EA4D5473F8E836D61E38160065B7DA948CFBE08F359370FF8049255F6",
+        "Index": 59
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void||False|0|Default",
+        "Body": "ECDDC812A44FEC087B525ED47DE3BD072870F47F96345638EB8F3EBCEFEE396F",
+        "Index": 61
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void||False|0|Default",
+        "Body": "B6B8984D21D6A35B1CD0EC024F66E0C8621F299AFB5DACE6117EF93913554E1F",
+        "Index": 2
+      },
+      {
+        "Type": "OnlineLoadManager",
+        "Signature": "OnlineLoadManager|System.Void||True|0|Default",
+        "Body": "D1C38EB0AD0EBA7EA5E81961DD09416F7C8473C2B0F2E0D8F7DAF64CDB1EB89B",
+        "Index": 1
+      },
+      {
+        "Type": "OnlineLoadManager",
+        "Signature": "OnlineLoadManager|System.Void||True|0|Default",
+        "Body": "A58FE4632CB4EB1948C61271DC23D643D3AE4DD5745D3EF23B9FE812A0B9F094",
+        "Index": 1
+      },
+      {
+        "Type": "CameraTarget",
+        "Signature": "CameraTarget|System.Void||True|0|Default",
+        "Body": "41383574BF2AFF279C8D7E9C953070F83664189567B9DFAAB01D64B84F230A8E",
+        "Index": 338
+      },
+      {
+        "Type": "CameraTarget",
+        "Signature": "CameraTarget|System.Void||True|0|Default",
+        "Body": "FDB90AF80504BA3BB72AE504CBD5FAFB043477ED87BBEDA022AAC23079436CA9",
+        "Index": 338
+      }
+    ],
+    "Key": "Utils.GIFFGJACLCO",
+    "Kind": "method",
+    "Name": "PIHOHCDOCGD",
+    "Signature": "Utils|TilemapScene|UnityEngine.Vector2|False|0|Default",
+    "Body": "E323530A623980CD6BC7917507D47A0501F16891E1E6BB1A324C3CCE431EBAC8",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "MaiNPC.Singleton",
+    "Kind": "property",
+    "Name": "IDACOPPOKLB",
+    "Signature": "MaiNPC|MaiNPC||False|0|Default",
+    "Body": "FE44EA80A8E08B04A306D95D925145CB52195FA2B7B299EA0DB75FE5AFBFF30F",
+    "SetterBody": null,
+    "ValueType": "MaiNPC",
+    "Static": true
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TilemapScene/DBIEEJKBMMI",
+        "Signature": "TilemapScene/DBIEEJKBMMI|System.Boolean||True|0|Default",
+        "Body": "AE2BDC4DC14A643C509B56379083D48CF5956974B87EE7D5646FACE295D00485",
+        "Index": 97
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|Season|False|0|Default",
+        "Body": "E3D08B3540ED0F8AF76B7EE6AAFBCFA6330A3A3F6E23100B122C3974EF5BE8F0",
+        "Index": 31
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|UnityEngine.GameObject|UnityEngine.Vector3,GroundType,Location,Season,System.Boolean|False|0|Default",
+        "Body": "B6AF9B1104C6A30470ECA3B30464DC234D668604ED33F650F4950C5A35C2A91B",
+        "Index": 68
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,System.Int32|False|0|Default",
+        "Body": "7F6A03B60174FA1754BFD0279ECCF9A955B162C2D17CFA0A009F5EBEC7A78E7A",
+        "Index": 16
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,System.Int32|False|0|Default",
+        "Body": "BCF8D994E7132B88645B13B71E27980E97E7CB9A8A6A7E85703986FF5E54BB19",
+        "Index": 16
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,GroundType,TilemapScene,Season|False|0|Default",
+        "Body": "13C0BCDFA4122DB6F23128FB8D2C543DB5688D1F13E54C41374FEECC76AE489B",
+        "Index": 30
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,System.Int32,System.Int32,System.Int32,TilemapScene|False|0|Default",
+        "Body": "57A9996DF509D7D52689608737B77B93DBE51113225F3C3EADE8DF50A93F0C11",
+        "Index": 26
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,TilemapScene,System.Int32,System.Int32,System.Int32,System.Boolean|False|0|Default",
+        "Body": "9F7405B54606E929FA4F498DCF861731959FCAEFD173D5A67F4397F2C4DDDCB6",
+        "Index": 84
+      }
+    ],
+    "Key": "WorldGrid.ILBKKPFDBKN",
+    "Kind": "method",
+    "Name": "OOMPLGODFAA",
+    "Signature": "WorldGrid|System.Void|WorldTile,UnityEngine.Vector3,TilemapScene,Season,System.Boolean|False|0|Default",
+    "Body": "DD804C93259BEB0A6F78E3EEA20134288C5C27FD1B668499EF884B2165D84805",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void|DecorationTile|False|0|Default",
+        "Body": "1CCE945EA4D5473F8E836D61E38160065B7DA948CFBE08F359370FF8049255F6",
+        "Index": 83
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void|System.Single,System.Single,System.Int32|False|0|Default",
+        "Body": "D214400004B8B81EEBB8670917B5040F4967B29DA2675FB18FC3BC5A3A33EAF7",
+        "Index": 11
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Boolean|UnityEngine.Vector3,EditorAction,DecorationTile|False|0|Default",
+        "Body": "8BEB87AA29DAEC2DFE780942D471BFACEAC279F1C1914BDA6E6540E09F9E2829",
+        "Index": 110
+      },
+      {
+        "Type": "ServiceBarrel",
+        "Signature": "ServiceBarrel|System.Void||True|0|Default",
+        "Body": "807B0C8D007FA5BEC29AFA9AB473FAB0DAA8AA82546771F6C641D7996E9AC7CF",
+        "Index": 21
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "59718F1ED1C1E9FAD8990EF3B52F1C5435881DF7BD1ECCE86F968A4F3E480980",
+        "Index": 188
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "A5EAB9A45F5C84AC0B5B70880FC8F20A70EFC51F8413347007033DC4A7EA5EBF",
+        "Index": 188
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "8268F6250DD9E398D9827D3D0D5403BB4D49E96FA5D12C08E4DFCDBF6337A228",
+        "Index": 188
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "9E9D0D9598CC116CF8B0BC5B3C144099C33ADE5A2DBDE0383834ACC4169DD4ED",
+        "Index": 188
+      }
+    ],
+    "Key": "WorldGrid.HOGKCMELOGO",
+    "Kind": "method",
+    "Name": "LAJANKHGGHG",
+    "Signature": "WorldGrid|System.Boolean|UnityEngine.Vector3,TilemapScene|False|0|Default",
+    "Body": "FE0DBC140889E601DCEED46D17EBA24C8965C558BF31CB6D5D00F6890BC0DCCF",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|WorldTile,UnityEngine.Vector3,TilemapScene,Season,System.Boolean|False|0|Default",
+        "Body": "DD804C93259BEB0A6F78E3EEA20134288C5C27FD1B668499EF884B2165D84805",
+        "Index": 12
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|TileType,TilemapScene,UnityEngine.Vector3Int[]|False|0|Default",
+        "Body": "4844440269B37744FA8FE3D4BA51CF796F7656CA8AD5E68CC1D5F0D3EFC27D16",
+        "Index": 28
+      },
+      {
+        "Type": "WorldGrid",
+        "Signature": "WorldGrid|System.Void|TileType,System.Collections.Generic.List`1<UnityEngine.Vector2>|False|0|Default",
+        "Body": "C9E71B1C52348EBF79A5450FE7E2823F77FF4EE126D7ED63439CE3F7FE25FADB",
+        "Index": 29
+      }
+    ],
+    "Key": "WorldGrid.DCHIPHNCGAN",
+    "Kind": "method",
+    "Name": "PHJJFBEMICE",
+    "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,TileType,TilemapScene|False|0|Default",
+    "Body": "CC56FA9447FFDA467A0E5FD357B61E6C188DB88712ED755D11DEE4010348442F",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void||True|0|Default",
+        "Body": "025DBE5236A3184E17E5D5278A94083B3C211DF5951BD8CC8DB9261EF660A481",
+        "Index": 206
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void||True|0|Default",
+        "Body": "8C0F4F3A7BE4815D8FE84B38464D74F1211CFA82BE3C416D9AAA9E88D282DB6F",
+        "Index": 206
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void||True|0|Default",
+        "Body": "F74DA05A435542FD98B3B0AF2C09BA057B482F6500D342A7184E5D545A491F89",
+        "Index": 206
+      },
+      {
+        "Type": "SaveData",
+        "Signature": "SaveData|System.Void||True|0|Default",
+        "Body": "DCFA8EC178946F5D23BA48236F2025C05A98AC6DFFFF41C2D3603A44D56F5154",
+        "Index": 36
+      },
+      {
+        "Type": "SaveData",
+        "Signature": "SaveData|System.Void||True|0|Default",
+        "Body": "B3DC43423EBF701C524221F2FCF2A1D0BDED47CF8A6C46EE46E6280612A8B88F",
+        "Index": 36
+      },
+      {
+        "Type": "RentedRoom",
+        "Signature": "RentedRoom|System.Void|System.Boolean,System.Boolean|True|0|Default",
+        "Body": "03A129D9C6E19D5153CC74E1A8BB35186CCA59D8342463978F0813BED189C670",
+        "Index": 57
+      },
+      {
+        "Type": "EditorTileMaps",
+        "Signature": "EditorTileMaps|System.Boolean|EditorAction|False|0|Default",
+        "Body": "E55750AD1A4F772807AE78AE0015C60E3D8B50A489C5B0139F5D32D423BA4D75",
+        "Index": 142
+      },
+      {
+        "Type": "TavernConstructionManager",
+        "Signature": "TavernConstructionManager|System.Void|UnityEngine.Vector3,UnityEngine.Vector3|True|0|Default",
+        "Body": "5447BFF5F1960E06180D8834E59E3EFFB1ADFE83813EC001E627D69B87095010",
+        "Index": 54
+      }
+    ],
+    "Key": "WorldGrid.GKCOFDIGDOJ",
+    "Kind": "method",
+    "Name": "JCBCNIMAGLM",
+    "Signature": "WorldGrid|System.Void|System.Collections.Generic.List`1<UnityEngine.Vector2>|False|0|Default",
+    "Body": "3480D80D2ED960E85D66081FD881A8F394BE9CCDEEE345FDD7EF5BD04E0AD557",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|System.Collections.Generic.Dictionary`2<UnityEngine.Vector2,TavernConstructionModifications/DecoModification>,UnityEngine.Vector3,MoneyMaterials,DecorationTile,System.Boolean|True|0|Default",
+        "Body": "EFC3928AF908F28E66A29D1A3FA7BDCBCB9A2BC147D3303062EC2D22CB7E6144",
+        "Index": 96
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|System.Collections.Generic.Dictionary`2<UnityEngine.Vector2,TavernConstructionModifications/DecoModification>,UnityEngine.Vector3,MoneyMaterials,DecorationTile,System.Boolean|True|0|Default",
+        "Body": "C77A3127C83039F87F2B87E127EA8D2D90C2B694668F7F35F7311117027C499F",
+        "Index": 96
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|System.Collections.Generic.Dictionary`2<UnityEngine.Vector2,TavernConstructionModifications/DecoModification>,UnityEngine.Vector3,MoneyMaterials,DecorationTile,System.Boolean|True|0|Default",
+        "Body": "0ECED55889F97A52E0F119E50DFE4954BB1DE930C10580B1B4B80EAA5E59B29D",
+        "Index": 96
+      },
+      {
+        "Type": "TavernConstructionModifications/FloorModification",
+        "Signature": "TavernConstructionModifications/FloorModification|System.Void|UnityEngine.Vector2|True|0|Default",
+        "Body": "ACDEDC46DF23D319147ECF8D248A9F523AF403D33301980E6988FFE0AA1C3623",
+        "Index": 4
+      },
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Boolean|UnityEngine.Vector3,DecorationTile,TilemapScene|False|0|Default",
+        "Body": "9477572508724F201537BE28930F54138BFE6A69431DBCBBA2565222B997E9EE",
+        "Index": 16
+      },
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+        "Body": "1217B837A66E63536593D3F93699C8C55FACFC6AE1F283CED51D14A89A0781E5",
+        "Index": 2
+      },
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Boolean|UnityEngine.Vector3,DecorationTile,TilemapScene|False|0|Default",
+        "Body": "B4A72D6E4157FCCE687A0C07D34E51788ADD19B8FA1EE12A391A04C6587E673C",
+        "Index": 16
+      },
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Boolean|UnityEngine.Vector3,DecorationTile,TilemapScene|False|0|Default",
+        "Body": "EA1ACCC37338C078995F12E811442FBEF666762F362561FB6E2AC6AFD48A66DF",
+        "Index": 16
+      }
+    ],
+    "Key": "WorldGrid.LGCMAPBKJKF",
+    "Kind": "method",
+    "Name": "DDOKDNHGEBL",
+    "Signature": "WorldGrid|System.Int32|UnityEngine.Vector3,TilemapScene|False|0|Default",
+    "Body": "D5389189260D9A3A7D0A318BC57BEA3D7FF4917E19C92C9212F6B4B34DE47D7A",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|System.Collections.Generic.Dictionary`2<UnityEngine.Vector2,TavernConstructionModifications/DecoModification>,UnityEngine.Vector3,MoneyMaterials,DecorationTile,System.Boolean|True|0|Default",
+        "Body": "EFC3928AF908F28E66A29D1A3FA7BDCBCB9A2BC147D3303062EC2D22CB7E6144",
+        "Index": 112
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|System.Collections.Generic.Dictionary`2<UnityEngine.Vector2,TavernConstructionModifications/DecoModification>,UnityEngine.Vector3,MoneyMaterials,DecorationTile,System.Boolean|True|0|Default",
+        "Body": "C77A3127C83039F87F2B87E127EA8D2D90C2B694668F7F35F7311117027C499F",
+        "Index": 112
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|System.Collections.Generic.Dictionary`2<UnityEngine.Vector2,TavernConstructionModifications/DecoModification>,UnityEngine.Vector3,MoneyMaterials,DecorationTile,System.Boolean|True|0|Default",
+        "Body": "0ECED55889F97A52E0F119E50DFE4954BB1DE930C10580B1B4B80EAA5E59B29D",
+        "Index": 112
+      },
+      {
+        "Type": "TavernConstructionModifications/FloorModification",
+        "Signature": "TavernConstructionModifications/FloorModification|System.Void|UnityEngine.Vector2|True|0|Default",
+        "Body": "ACDEDC46DF23D319147ECF8D248A9F523AF403D33301980E6988FFE0AA1C3623",
+        "Index": 14
+      },
+      {
+        "Type": "ItemSpace",
+        "Signature": "ItemSpace|System.Void|System.Boolean,TilemapScene,Door|True|0|Default",
+        "Body": "E318BF758166EA7605DB06E7CAF7375E03E83B97543BC0E5F0E74AF4D42333CF",
+        "Index": 187
+      },
+      {
+        "Type": "ItemSpace",
+        "Signature": "ItemSpace|System.Void|System.Boolean,TilemapScene,Door|True|0|Default",
+        "Body": "AD22470C5E78ED052EC3EA1AEFBCE782B7C739AE9CBA83F852D14B4A880D0A1B",
+        "Index": 187
+      },
+      {
+        "Type": "EditorTooltip",
+        "Signature": "EditorTooltip|System.Void|UnityEngine.Vector3|True|0|Default",
+        "Body": "8E633AC2DED34A263BF02ED84EEE1EC929E0657B1C4CFD7A7D8AECE806A78F31",
+        "Index": 159
+      },
+      {
+        "Type": "EditorTooltip",
+        "Signature": "EditorTooltip|System.Void|UnityEngine.Vector3|True|0|Default",
+        "Body": "3A6AFE90898B77A5A76CD823FC584E30F40D96DFD2E9287D338FB32E3D2732C2",
+        "Index": 159
+      }
+    ],
+    "Key": "WorldGrid.HGBKAOHLBHO",
+    "Kind": "method",
+    "Name": "DIDJLGKGDNH",
+    "Signature": "WorldGrid|System.Int32|UnityEngine.Vector3,TilemapScene|False|0|Default",
+    "Body": "C07B4D35728C8C513B16E220EE58ED1E4F56D204F7E97B63B832FEE0E12F62A4",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void||False|0|Default",
+        "Body": "81F6923D2C26B9864DD8D725772208B3BDBBD0150F4BF0973F5A8FB0F607CDB6",
+        "Index": 83
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void||False|0|Default",
+        "Body": "ECDDC812A44FEC087B525ED47DE3BD072870F47F96345638EB8F3EBCEFEE396F",
+        "Index": 80
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void||False|0|Default",
+        "Body": "B6B8984D21D6A35B1CD0EC024F66E0C8621F299AFB5DACE6117EF93913554E1F",
+        "Index": 21
+      },
+      {
+        "Type": "MagicBookStand",
+        "Signature": "MagicBookStand|System.Void||True|0|Default",
+        "Body": "2F1BD5F9D24544D558AAB00CB6B1E5C7706A70F5C7A441369BBE3586E41C1FC0",
+        "Index": 31
+      },
+      {
+        "Type": "MagicBookStand",
+        "Signature": "MagicBookStand|System.Void||True|0|Default",
+        "Body": "050F3E89E93B3468CA7BE5A52FB425AF9738DE0A836B9663EB0FA899D0E3EA24",
+        "Index": 31
+      },
+      {
+        "Type": "MagicBookStand",
+        "Signature": "MagicBookStand|System.Void||True|0|Default",
+        "Body": "E9C3BD9151C8ACC3C92875F2897D8ACFE74FDEC0F25291A1227C81F56EC90EA0",
+        "Index": 31
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void||True|0|Default",
+        "Body": "778D56F3F75BE408B0B7EC82C9203FF6B495FA2A9C1EF0500829A41C470D1803",
+        "Index": 87
+      },
+      {
+        "Type": "GrassGenerator",
+        "Signature": "GrassGenerator|System.Void||True|0|Default",
+        "Body": "0088A87E0A90794D6B3989A237FCC991A81C9C53A3F99583ECF5208D6573A950",
+        "Index": 87
+      }
+    ],
+    "Key": "WorldGrid.IOEFEOEFIAL",
+    "Kind": "method",
+    "Name": "LFEFFONCOFM",
+    "Signature": "WorldGrid|GroundType|UnityEngine.Vector3|False|0|Default",
+    "Body": "EC083AEC4B703A631F8FB3BBC46DD5003D49CA137E83028ADF5F4EBFA3D77794",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Collections.Generic.List`1<UnityEngine.Vector2>|System.Collections.Generic.List`1<UnityEngine.Vector2>|False|0|Default",
+        "Body": "26FDA491EBB49DD26E55A37BEF9C0186EB8715F4D43D7C54A9DB6FC0DD7C9DB4",
+        "Index": 35
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Boolean|UnityEngine.Vector3,EditorTile&|False|0|Default",
+        "Body": "E6A0195BFBE6236B38854D0DE66774AC732F7DEDBC5D43C7604D56061173C2D4",
+        "Index": 7
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void|UnityEngine.Vector3|False|0|Default",
+        "Body": "E398B2535463198AE73A4593CF1D59FC0CBCC08E34CD43E51A577C0A275DF35F",
+        "Index": 2
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Collections.Generic.List`1<UnityEngine.Vector2>|System.Collections.Generic.List`1<UnityEngine.Vector2>,System.Int32,System.Collections.Generic.List`1<UnityEngine.Vector2>|False|0|Default",
+        "Body": "28393989F5F3D1070C448713D24F4E7446D0465521F4F0547077C10BF8EAFE00",
+        "Index": 9
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Void|UnityEngine.Vector3|False|0|Default",
+        "Body": "0862865B14AD4604766037C04733A3DCF1D379D8788A162B2239D8E5EA897F78",
+        "Index": 2
+      },
+      {
+        "Type": "EditorGrid",
+        "Signature": "EditorGrid|System.Boolean|UnityEngine.Vector3|False|0|Default",
+        "Body": "FB67E9D6368D3F1119D50FACC66C927315191C7AAB22F5E2FA16F95A1DB98F26",
+        "Index": 2
+      },
+      {
+        "Type": "Square",
+        "Signature": "Square|UnityEngine.Vector3||True|0|Default",
+        "Body": "6A433E4660DD195A1F444D1C660D972DC98408523F4455A15D67DB3161E8B0B0",
+        "Index": 6
+      },
+      {
+        "Type": "MagicFertilizer",
+        "Signature": "MagicFertilizer|System.Boolean|System.Int32|True|0|Default",
+        "Body": "78E495FBCD0AE26E50F2922E5343844B00FB65D347191AFE1A0211BD6137110C",
+        "Index": 30
+      }
+    ],
+    "Key": "Utils.PBCJHNPKLEH",
+    "Kind": "method",
+    "Name": "MHJJGJFAMBC",
+    "Signature": "Utils|UnityEngine.Vector3|UnityEngine.Vector3|False|0|Default",
+    "Body": "551A367BA7630CA7048FC4448F19B9605C74FF7B2DA2924A296D5B51DD5991ED",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "DB8B4F900C7F25868B4E611B7185BC25F497BF0EC8F7D4456E6322B1AA71F1CC",
+        "Index": 13
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "15BF2C22C65018B344967C6D2BD4EE997C884A36D771E8F6EDA18779CC8DF9EC",
+        "Index": 13
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "59718F1ED1C1E9FAD8990EF3B52F1C5435881DF7BD1ECCE86F968A4F3E480980",
+        "Index": 178
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "1E5E0034BB3C3043361EFEAC7B9C932BB54810DB21DEC7A9ADF88CE2BA1F7357",
+        "Index": 13
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "A5EAB9A45F5C84AC0B5B70880FC8F20A70EFC51F8413347007033DC4A7EA5EBF",
+        "Index": 178
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "8268F6250DD9E398D9827D3D0D5403BB4D49E96FA5D12C08E4DFCDBF6337A228",
+        "Index": 178
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "6FA6173933E5EBBDFEF1FB1B0F8B7D20B8DE5431F71774C1992A2F09366E8162",
+        "Index": 13
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "9E9D0D9598CC116CF8B0BC5B3C144099C33ADE5A2DBDE0383834ACC4169DD4ED",
+        "Index": 178
+      }
+    ],
+    "Key": "WorldGrid.GOCNKDLCFLM",
+    "Kind": "method",
+    "Name": "DECNJHLKFGM",
+    "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,System.Int32|False|0|Default",
+    "Body": "7F6A03B60174FA1754BFD0279ECCF9A955B162C2D17CFA0A009F5EBEC7A78E7A",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "ABD39F88CEFAB5D5EA146101F1C68BE905B1A0A560E0AC8023D5FE8EBE7137E8",
+        "Index": 14
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "711870BBBDCF8B1311D19E675F423CF8C78736F4A625CAF00110BEF41F5EA18A",
+        "Index": 14
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "59718F1ED1C1E9FAD8990EF3B52F1C5435881DF7BD1ECCE86F968A4F3E480980",
+        "Index": 166
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "A5EAB9A45F5C84AC0B5B70880FC8F20A70EFC51F8413347007033DC4A7EA5EBF",
+        "Index": 166
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "3C2995D5845CFAF5BF5D07C5F8CE5AE11A7D583EC857EAC23CA9F00A3BAD30F5",
+        "Index": 14
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "8268F6250DD9E398D9827D3D0D5403BB4D49E96FA5D12C08E4DFCDBF6337A228",
+        "Index": 166
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "9E9D0D9598CC116CF8B0BC5B3C144099C33ADE5A2DBDE0383834ACC4169DD4ED",
+        "Index": 166
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "C4147CC6E7F0EB340A1B32D0D9E1798294E365100CF82DC1D1A7C8BFCEEE6D4C",
+        "Index": 14
+      }
+    ],
+    "Key": "WorldGrid.JKGHOPIILPJ",
+    "Kind": "method",
+    "Name": "NPAGAMDIDEJ",
+    "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,System.Int32,System.Boolean|False|0|Default",
+    "Body": "FDC3813990EB7F3B9FF25A86C52152A7472D90E634FE625E278EFB75EED0260F",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "DB8B4F900C7F25868B4E611B7185BC25F497BF0EC8F7D4456E6322B1AA71F1CC",
+        "Index": 13
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "59718F1ED1C1E9FAD8990EF3B52F1C5435881DF7BD1ECCE86F968A4F3E480980",
+        "Index": 298
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "A5EAB9A45F5C84AC0B5B70880FC8F20A70EFC51F8413347007033DC4A7EA5EBF",
+        "Index": 298
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "90F45E077010CF5411886CF49C60E79F2B629CBB7679FA45A3D5EC1C80A2DB81",
+        "Index": 13
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "120A10225D56B6540F329EEAB20E42C6ACD8997CABF2576B01D9DB5A1F30C892",
+        "Index": 13
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "8268F6250DD9E398D9827D3D0D5403BB4D49E96FA5D12C08E4DFCDBF6337A228",
+        "Index": 298
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Boolean|EditorAction,System.Collections.Generic.List`1<UnityEngine.Vector2>,DecorationTile,ZoneType,System.Int32|True|0|Default",
+        "Body": "9E9D0D9598CC116CF8B0BC5B3C144099C33ADE5A2DBDE0383834ACC4169DD4ED",
+        "Index": 298
+      },
+      {
+        "Type": "TavernConstructionModifications",
+        "Signature": "TavernConstructionModifications|System.Void|UnityEngine.Vector2,TavernConstructionModifications/DecoModification,MoneyMaterials|True|0|Default",
+        "Body": "DAB4EAA27A76EF3D13CD3CC9E0A8C361497DF531C33C5E0E035B1FCC6510C6D1",
+        "Index": 13
+      }
+    ],
+    "Key": "WorldGrid.CNKKDCOIDFO",
+    "Kind": "method",
+    "Name": "JKOAIILLFHJ",
+    "Signature": "WorldGrid|System.Void|UnityEngine.Vector3,System.Int32|False|0|Default",
+    "Body": "BCF8D994E7132B88645B13B71E27980E97E7CB9A8A6A7E85703986FF5E54BB19",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+        "Body": "841BC4A920B3E1089D2E7654EDE6350C6AC3151B3878CD7351AEAF331DB0FD4F",
+        "Index": 2
+      },
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+        "Body": "006E2B90B9EB5625DBEAE26D49C3928180138171AB18F66C5D0390CC0D284AD0",
+        "Index": 13
+      },
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+        "Body": "7EDA2237F53E314F84D62DA9B719C9CC1E86950FAA8E89E99A9597E341545523",
+        "Index": 13
+      }
+    ],
+    "Key": "FloorLimitsManager.JGCDFKNOFGM",
+    "Kind": "method",
+    "Name": "PODCLJFCFAO",
+    "Signature": "FloorLimitsManager|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+    "Body": "9B06B8FF9446ED4E2F04DDBBE027EE2D56C1C30B8BC1B8BA1C0B33E84FB1CDA8",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+        "Body": "1217B837A66E63536593D3F93699C8C55FACFC6AE1F283CED51D14A89A0781E5",
+        "Index": 63
+      },
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+        "Body": "4BCD0605E59CF8C7BC3BACEEB6F5E713B495A871801BF84AAB0A2117A74F4418",
+        "Index": 45
+      },
+      {
+        "Type": "FloorLimitsManager",
+        "Signature": "FloorLimitsManager|System.Void|UnityEngine.Vector3,TilemapScene|False|0|Default",
+        "Body": "9B06B8FF9446ED4E2F04DDBBE027EE2D56C1C30B8BC1B8BA1C0B33E84FB1CDA8",
+        "Index": 45
+      }
+    ],
+    "Key": "FloorLimitsManager.IMNMDKPFCFJ",
+    "Kind": "method",
+    "Name": "OIBIHOKNJJM",
+    "Signature": "FloorLimitsManager|System.Boolean|UnityEngine.Vector3,DecorationTile,TilemapScene|False|0|Default",
+    "Body": "EA1ACCC37338C078995F12E811442FBEF666762F362561FB6E2AC6AFD48A66DF",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TavernConstructionUI",
+        "Signature": "TavernConstructionUI|System.Void||True|0|Default",
+        "Body": "82BE2CD7CCB9DADA1BF5EF81F4151BB09C302DD5EA0E716AA3BE5E9202D62D38",
+        "Index": 51
+      },
+      {
+        "Type": "TavernConstructionUI",
+        "Signature": "TavernConstructionUI|System.Void|TavernFloor|True|0|Default",
+        "Body": "A09873D8B4512B3BB4923503B1E6040F7395BE5BE513E93104C9642EA0373D15",
+        "Index": 2
+      },
+      {
+        "Type": "TavernConstructionUI",
+        "Signature": "TavernConstructionUI|System.Void||True|0|Default",
+        "Body": "22166751D766AF9539E58E64DF447526716BEC29A37DB8FEE62F42E43BD48C55",
+        "Index": 51
+      },
+      {
+        "Type": "TavernConstructionUI",
+        "Signature": "TavernConstructionUI|System.Void||True|0|Default",
+        "Body": "CE70C7499E3ACD0C9875D556237249EB997A95350F6D1C6338B2061F1E92FC6B",
+        "Index": 47
+      },
+      {
+        "Type": "TavernConstructionUI",
+        "Signature": "TavernConstructionUI|System.Void||True|0|Default",
+        "Body": "B67FD55835B788941344E6BB7FFDFE08782E5531EF2B684F14F7DC64C209914B",
+        "Index": 51
+      }
+    ],
+    "Key": "TavernConstructionUI.GPKBBNLLGDA",
+    "Kind": "method",
+    "Name": "HFDMGPGNOAG",
+    "Signature": "TavernConstructionUI|System.Void|TavernFloor|True|0|Default",
+    "Body": "519DE3281B815D90A8727AA812CCEB2280BBB58CD194654229E3DDA1D6CCD2FE",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "DecorationTile.NCCCDENANMF",
+    "Kind": "method",
+    "Name": "NDMLGJJAFOG",
+    "Signature": "DecorationTile|System.String||True|0|Default",
+    "Body": "D8712C2AB92D4D7996B63CE04987074BE6845C89BB9D3455F7C35F18AE1F197A",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "SaveUI",
+        "Signature": "SaveUI|System.Void|System.Boolean|True|0|Default",
+        "Body": "A74463F82BFE3632BE8493159C92FFEDB83FB2EC2C22C834B0BF7E2C4F83D34A",
+        "Index": 19
+      }
+    ],
+    "Key": "SaveData.GKABKNKACBN",
+    "Kind": "method",
+    "Name": "IDMCKMPCAFN",
+    "Signature": "SaveData|System.Void||True|0|Default",
+    "Body": "9A4F1DE6B0B7D988BEB5C0E2ABE0494F7D783A80772F360F626936BD9C30A880",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "OnlineMissionsManager",
+        "Signature": "OnlineMissionsManager|System.Void||True|0|Default",
+        "Body": "145361757B974EEF80534DEFCA522859C6C1F815189F8A7C5103373743223437",
+        "Index": 1
+      },
+      {
+        "Type": "Q301ManoDePintura_Paso2",
+        "Signature": "Q301ManoDePintura_Paso2|System.Void||False|0|Default",
+        "Body": "BEE21F27280393E2A891E4FEE1A22A41E49CEA48AE195B33775A4FAA8E5D6618",
+        "Index": 1
+      },
+      {
+        "Type": "Q301ManoDePintura_Paso2",
+        "Signature": "Q301ManoDePintura_Paso2|System.Void||False|0|Default",
+        "Body": "D0CF3E7311195E66E2F992A41A7EE8C63F9783A70C857A9139B01F931AAA07AE",
+        "Index": 1
+      },
+      {
+        "Type": "Q301ManoDePintura_Paso2",
+        "Signature": "Q301ManoDePintura_Paso2|System.Void||False|0|Default",
+        "Body": "64308A624E4C6163AF367635D794CF60B591B598C4435A8B3D1D0B81C17CF3E7",
+        "Index": 1
+      }
+    ],
+    "Key": "Q301ManoDePintura_Paso2.PGKPCJDLMJI",
+    "Kind": "method",
+    "Name": "PECBGNINEDF",
+    "Signature": "Q301ManoDePintura_Paso2|System.Void|System.Boolean|False|0|Default",
+    "Body": "1EF79710C68BDF963877FBA6F62193DF974146F6DE2E1EAB5B9C91F0C5BAF0C6",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "GameManager.LNEIIDPIDFP",
+    "Kind": "property",
+    "Name": "IDACOPPOKLB",
+    "Signature": "GameManager|GameManager||False|0|Default",
+    "Body": "8290A31FEEC7D0764F36DE3CDAB14040BCB4AD1B182D6AFBF60288C19F24165C",
+    "SetterBody": null,
+    "ValueType": "GameManager",
+    "Static": true
+  },
+  {
+    "Anchors": [],
+    "Key": "CommonReferences.LNEIIDPIDFP",
+    "Kind": "property",
+    "Name": "IDACOPPOKLB",
+    "Signature": "CommonReferences|CommonReferences||False|0|Default",
+    "Body": "B09912A5638F44DEF003759CE7F755FE72275473A3BD63D3F7B8FC67405EE6B8",
+    "SetterBody": null,
+    "ValueType": "CommonReferences",
+    "Static": true
+  },
+  {
+    "Anchors": [],
+    "Key": "SeasonManager.LMINKIOLECO",
+    "Kind": "property",
+    "Name": "FKNIGFGOBHO",
+    "Signature": "SeasonManager|Season||False|0|Default",
+    "Body": "86C954BC025C48EF5B853E585F4FF85F74BDAD6A64A751A04E37C587637F5444",
+    "SetterBody": null,
+    "ValueType": "Season",
+    "Static": true
+  },
+  {
+    "Anchors": [],
+    "Key": "GameManager.PAAHJHJKKBN",
+    "Kind": "property",
+    "Name": "EJIANNKMNII",
+    "Signature": "GameManager|System.Boolean||True|0|Default",
+    "Body": "E6A83A392DBBDFD388D581021B1B76C6DC4F974B009A3DE10FABCC1C54ECA442",
+    "SetterBody": "FAA4BC72ADFC0CE51EF8FAF96376DE8E7B340797EC29021713962B4DEFE2E705",
+    "ValueType": "System.Boolean",
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "CharacterAnimation.PKGDJCDLADP",
+    "Kind": "property",
+    "Name": "CKLJOLPBBAM",
+    "Signature": "CharacterAnimation|Direction||True|0|Default",
+    "Body": "AD5ABE255DAC4756DAAF24089CC255B803725430AA6F23054500F96E7894FFBB",
+    "SetterBody": "FA82C54C867142543CD8009FB26D6B6C18DEA768940BCE91BDAB2AF217DC1B8A",
+    "ValueType": "Direction",
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "NewTutorialManager.AODHDJFHPLJ",
+    "Kind": "property",
+    "Name": "EOBAGAFEBLJ",
+    "Signature": "NewTutorialManager|System.Boolean||False|0|Default",
+    "Body": "6A162D60BD5B63211178D5CB1FB7E4A6C6B41062F2ADAA9BFFA408B921DC586D",
+    "SetterBody": "D010D5291A7ADAAA15B686F88F78115E59027CCC904AF6D7BD50319FF231F2A7",
+    "ValueType": "System.Boolean",
+    "Static": true
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "CustomerStateSpawning",
+        "Signature": "CustomerStateSpawning|System.Void|System.Boolean|True|0|Default",
+        "Body": "6D4708272DCCA400FDD42BD4BC62103878EDEC6E9F97F8A363750F855970B6E0",
+        "Index": 14
+      }
+    ],
+    "Key": "CustomerStateSpawning.JLBKENOBLND",
+    "Kind": "method",
+    "Name": "ICCEAECHCKF",
+    "Signature": "CustomerStateSpawning|System.Boolean||True|0|Default",
+    "Body": "FD9FE0BD26804CB72E366AED227302992AC26A78EFCDC50CD725C189BA1FB935",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "ImportantGuestEvent/LPNAHPLBCIF",
+        "Signature": "ImportantGuestEvent/LPNAHPLBCIF|System.Boolean||True|0|Default",
+        "Body": "6BE8D43D8BD2050ECD07639E23DAAEE1A62720FFC7F1B49F37B26DE78EBAD755",
+        "Index": 25
+      },
+      {
+        "Type": "Timer",
+        "Signature": "Timer|System.Single||True|0|Default",
+        "Body": "A3B4104C538512783C051A7421E127368272B64092C5CD181200396FB18772F1",
+        "Index": 11
+      },
+      {
+        "Type": "Timer",
+        "Signature": "Timer|System.Void|GameDate|True|0|Default",
+        "Body": "5BD86F03ED30668D622E8853F6C258E1D2754B776660457CB16CD514EE92CBA6",
+        "Index": 2
+      }
+    ],
+    "Key": "WorldTime.get_currentGameDateMin",
+    "Kind": "method",
+    "Name": "get_currentGameDateMin",
+    "Signature": "WorldTime|System.UInt64||False|0|Default",
+    "Body": "6C016F06401EA4AECF015541A3449ACDFCF83906BEE3B4F538E5A0137148B605",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "TavernManager.MBGCOJHGANE",
+    "Kind": "property",
+    "Name": "HCLALBLPIJC",
+    "Signature": "TavernManager|System.Single||True|0|Default",
+    "Body": "75B95877A131F84D50EF898DD1F5A580F66E4FA2CAB76A51B9F28D54FCE91D48",
+    "SetterBody": "8E40C723690A5ED61745104DAB89DE3E58728E0B76BDC312FCBC9C0FF21F0183",
+    "ValueType": "System.Single",
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "TavernManager.IGENDKACIKK",
+    "Kind": "property",
+    "Name": "PBOJHHEACHL",
+    "Signature": "TavernManager|DirtLevel||True|0|Default",
+    "Body": "E439E6449593E24B7AD5F711B046018CA3651C09CA23B738C93C7874B1EBA388",
+    "SetterBody": "391BA886B80C7EC716170E809EEBAA39596BCBE8286D58713093118514F27F10",
+    "ValueType": "DirtLevel",
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "TavernManager",
+        "Signature": "TavernManager|System.Void|DirtLevel|True|0|Default",
+        "Body": "391BA886B80C7EC716170E809EEBAA39596BCBE8286D58713093118514F27F10",
+        "Index": 0
+      },
+      {
+        "Type": "TavernManager",
+        "Signature": "TavernManager|System.Void|DirtLevel|True|0|Default",
+        "Body": "01573673691C8E5D6F7A5FF15326ED980628E8DFB34F0FB497C3B240755407F3",
+        "Index": 0
+      },
+      {
+        "Type": "TavernManager",
+        "Signature": "TavernManager|System.Void|DirtLevel|True|0|Default",
+        "Body": "B9703D69AF093729C39F730908219C5678196C9F0810AD24FFDCDDF3E83E22DC",
+        "Index": 0
+      }
+    ],
+    "Key": "NewTutorialManager.DirtLevelBlocked",
+    "Kind": "method",
+    "Name": "DirtLevelBlocked",
+    "Signature": "NewTutorialManager|System.Boolean||False|0|Default",
+    "Body": "3CBE1EAD77B88651058EA50E7DF2E61CB59284F3EC5AA5F7C67CF0A5358F5B4B",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "TavernManager.LNEIIDPIDFP",
+    "Kind": "property",
+    "Name": "IDACOPPOKLB",
+    "Signature": "TavernManager|TavernManager||False|0|Default",
+    "Body": "B0D24E408B16A20972394C66C8B2F00DD36FA2B07C85F77D8F5D834FD5BC11EE",
+    "SetterBody": null,
+    "ValueType": "TavernManager",
+    "Static": true
+  },
+  {
+    "Anchors": [],
+    "Key": "HoverObject.LAOBLFKKALG",
+    "Kind": "property",
+    "Name": "FLABELIHEGB",
+    "Signature": "HoverObject|IHoverable||True|0|Default",
+    "Body": "7E1E1B10D6548278D9A6D7E94FB19542C14844F83CE56451D9722B6F4FA88A25",
+    "SetterBody": "91F81996E4C854D4D4E3F643905D817187B10D54556E5B090754C885ACFF22DE",
+    "ValueType": "IHoverable",
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "CustomerStateRequestingRoom",
+        "Signature": "CustomerStateRequestingRoom|System.Void||True|0|Default",
+        "Body": "389F18E5562B4B0F5D65235C39E53FCB4B115F43DDD51BC47B0191851E12A21E",
+        "Index": 3
+      },
+      {
+        "Type": "CustomerStateRequestingRoom",
+        "Signature": "CustomerStateRequestingRoom|System.Void||True|0|Default",
+        "Body": "C32F4C0E1B4F534668A7925AB1E3A0C46DC47BBF4A1FCA5FDEC621D5C5B02471",
+        "Index": 5
+      },
+      {
+        "Type": "CustomerStateRequestingRoom",
+        "Signature": "CustomerStateRequestingRoom|System.Void||True|0|Default",
+        "Body": "52B0B3C3F0B2BF8389A665563B1BA939C99D4D24C88665C3D8FCA0F28C603844",
+        "Index": 7
+      },
+      {
+        "Type": "CustomerStateRequestingRoom",
+        "Signature": "CustomerStateRequestingRoom|System.Void||True|0|Default",
+        "Body": "9F73A3C07A987B517D5D923BD1DD6A983E20F24358BE2CF01D360A626099444C",
+        "Index": 5
+      },
+      {
+        "Type": "CustomerStateRequestingRoom",
+        "Signature": "CustomerStateRequestingRoom|System.Void||True|0|Default",
+        "Body": "34221D0914DED994BE2B4D1759E5031E20E7B72D9BC6C67AB1FBA58E866CFB69",
+        "Index": 3
+      },
+      {
+        "Type": "CustomerStateRequestingRoom",
+        "Signature": "CustomerStateRequestingRoom|System.Void||True|0|Default",
+        "Body": "DAB9A97A8749CB7FC23BB0E1146BF86E8B379182CEBD572C592550910347976D",
+        "Index": 3
+      },
+      {
+        "Type": "CustomerStateRequestingRoom",
+        "Signature": "CustomerStateRequestingRoom|System.Void||True|0|Default",
+        "Body": "D658481CA2830B69B2EE5D702D1BB46036EFD25EEA1EA5CBD32A8F1B47C79CFD",
+        "Index": 5
+      },
+      {
+        "Type": "CustomerStateRequestingRoom",
+        "Signature": "CustomerStateRequestingRoom|System.Void||True|0|Default",
+        "Body": "81FEE5DFE54B28D2429E494AE70073243F83296C2E3AE392460E68326AF8DC0D",
+        "Index": 3
+      }
+    ],
+    "Key": "CustomerStateBase.ALGFFFCODAN",
+    "Kind": "field",
+    "Name": "AKNBMCBIIIB",
+    "Signature": null,
+    "Body": null,
+    "SetterBody": null,
+    "ValueType": "Customer",
+    "Static": false
+  },
+  {
+    "Anchors": [],
+    "Key": "MaiNPC.MOOHALBHKBC",
+    "Kind": "method",
+    "Name": "JKONHIGIKKO",
+    "Signature": "MaiNPC|System.Void||True|0|Default",
+    "Body": "35BFC2772E727377F1FB3C4E3205C115B5A5BCE58AD3F16DA0C12EA56EFF1DA7",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "MaiNPC",
+        "Signature": "MaiNPC|System.Boolean|System.Int32|True|0|Default",
+        "Body": "D9C0E16D65AAC8C3C095B0489570F27897CDAC1AD775C6D379B5AED33B21FF95",
+        "Index": 10
+      }
+    ],
+    "Key": "MaiNPC.GBAIJFGGCCB",
+    "Kind": "method",
+    "Name": "BPMGMBPAMFI",
+    "Signature": "MaiNPC|System.Boolean||True|0|Default",
+    "Body": "CC853CDACC59E7C0110E5CC4F31A750D8869F0C5C5D8DF89F83E8E69A3EC3842",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "MaiNPC",
+        "Signature": "MaiNPC|System.Void||True|0|Default",
+        "Body": "19778577C4B021AECDF761D570699F4DB3519562F9B8C47336D0B6D6AE1939B8",
+        "Index": 18
+      },
+      {
+        "Type": "MaiNPC",
+        "Signature": "MaiNPC|System.Void||True|0|Default",
+        "Body": "50066C0129F3A0CC79BFE0ABB7D852BC7944FCD81C90757C4EEDAA30D7360894",
+        "Index": 11
+      }
+    ],
+    "Key": "MaiNPC.PBDHLHCNKNG",
+    "Kind": "method",
+    "Name": "NLMBGKBFGCI",
+    "Signature": "MaiNPC|System.Void|System.Int32|True|0|Default",
+    "Body": "D8EDB57198156EA7C5706FAF8F501A4832D7B76282DB060CD66CC089F9588212",
+    "SetterBody": null,
+    "ValueType": null,
+    "Static": false
+  },
+  {
+    "Anchors": [
+      {
+        "Type": "MaiNPC",
+        "Signature": "MaiNPC|System.Void||True|0|Default",
+        "Body": "35BFC2772E727377F1FB3C4E3205C115B5A5BCE58AD3F16DA0C12EA56EFF1DA7",
+        "Index": 42
+      },
+      {
+        "Type": "MaiNPC",
+        "Signature": "MaiNPC|System.Boolean|System.Int32|True|0|Default",
+        "Body": "B478F4318D84E4DEE243F3D99FD80116864A06724194DBE6F24838ED626DA800",
+        "Index": 38
+      }
+    ],
+    "Key": "MaiNPC.DONJOEHCNHD",
+    "Kind": "field",
+    "Name": "GEECOCBMLAB",
+    "Signature": null,
+    "Body": null,
+    "SetterBody": null,
+    "ValueType": "System.Boolean",
+    "Static": false
+  }
+]
