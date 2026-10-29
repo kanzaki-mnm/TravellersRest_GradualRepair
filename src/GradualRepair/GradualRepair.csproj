@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework><LangVersion>latest</LangVersion>
-    <AssemblyName>GradualRepair</AssemblyName><Version>0.29.5</Version>
+    <AssemblyName>GradualRepair</AssemblyName><Version>1.0.0</Version>
     <GameDir>$(MSBuildThisFileDirectory)..\..\sandbox\game</GameDir>
   </PropertyGroup>
   <ItemGroup><EmbeddedResource Include="../../art/GradualRepair/CounterCleanup/Counter_Damaged_Cleaned.png" LogicalName="Counter_Damaged_Cleaned.png" /></ItemGroup>

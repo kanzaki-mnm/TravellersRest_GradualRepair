@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using HarmonyLib;
 using TMPro;
@@ -71,7 +71,7 @@ namespace GradualRepair
         }
         void BuildMailboxEntry(PostboxUI ui)
         {
-            var backIcon = Resources.FindObjectsOfTypeAll<GamepadSprite>().FirstOrDefault(s => s.gameObject.scene.IsValid() && (ActionType)AccessTools.Field(typeof(GamepadSprite), "actionType").GetValue(s) == ActionType.UIBack && s.gameObject.activeInHierarchy);
+            var backIcon = Resources.FindObjectsOfTypeAll<GamepadSprite>().FirstOrDefault(s => s.gameObject.scene.IsValid() && (ActionType)NativeReferences.Field(typeof(GamepadSprite), "actionType").GetValue(s) == ActionType.UIBack && s.gameObject.activeInHierarchy);
             var backPlate = backIcon == null || backIcon.transform.parent == null ? null : backIcon.transform.parent.GetComponent<Image>();
             var source = ui.GetComponentsInChildren<TextMeshProUGUI>(true).FirstOrDefault(t => t.font != null) ?? throw new InvalidOperationException("Mailbox native font unavailable");
             mailboxCanvas = new GameObject("GradualRepair Mailbox Entry", typeof(RectTransform), typeof(Canvas), typeof(CanvasScaler), typeof(GraphicRaycaster));
@@ -84,7 +84,7 @@ namespace GradualRepair
             mailboxLabel = UiRect("Repair Plan Label", rect, 0, 0, 300, 32).gameObject.AddComponent<TextMeshProUGUI>(); mailboxLabel.font = source.font; mailboxLabel.fontSharedMaterial = source.fontSharedMaterial; mailboxLabel.raycastTarget = false; mailboxLabel.fontSize = 20; mailboxLabel.color = Color.white; mailboxLabel.alignment = TextAlignmentOptions.Center; mailboxLabel.enableWordWrapping = false;
             var text = mailboxLabel.rectTransform; text.anchorMin = Vector2.zero; text.anchorMax = Vector2.one; text.offsetMin = new Vector2(46, 2); text.offsetMax = new Vector2(-12, -2); text.localScale = Vector3.one;
             var icon = UiRect("Native Shortcut", rect, 4, 1, 30, 30).gameObject.AddComponent<Image>(); icon.raycastTarget = false; icon.preserveAspect = true; mailboxPadIcon = icon.gameObject;
-            var binding = icon.gameObject.AddComponent<GamepadSprite>(); AccessTools.Field(typeof(GamepadSprite), "actionType").SetValue(binding, ActionType.UINextCategory); AccessTools.Field(typeof(GamepadSprite), "image").SetValue(binding, icon);
+            var binding = icon.gameObject.AddComponent<GamepadSprite>(); NativeReferences.Field(typeof(GamepadSprite), "actionType").SetValue(binding, ActionType.UINextCategory); NativeReferences.Field(typeof(GamepadSprite), "image").SetValue(binding, icon);
             Log("mailbox_entry_created", new { keyboard = "R", gamepad = "UINextCategory" });
         }
         void ReleaseMailboxEntry()

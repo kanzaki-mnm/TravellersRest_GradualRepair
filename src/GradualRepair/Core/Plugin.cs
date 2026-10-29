@@ -1,4 +1,4 @@
-using BepInEx;
+﻿using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
 using Newtonsoft.Json;
@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace GradualRepair
 {
-    [BepInPlugin("s_evans.travellersrest.gradualrepair", "Gradual Repair", "0.29.5")]
+    [BepInPlugin("s_evans.travellersrest.gradualrepair", "Gradual Repair", "1.0.0")]
     [DefaultExecutionOrder(-1000)]
     public sealed partial class Plugin : BaseUnityPlugin
     {
@@ -23,7 +23,7 @@ namespace GradualRepair
         ConfigEntry<int> materialCostPercent, laborCostPercent;
         bool projectInitialized, visualNativeFacade;
         bool bound, open, wasTimeBlocked, dirty, failed, confirm;
-        bool startupFailed, paymentRollbackFailed;
+        bool startupFailed, paymentRollbackFailed, healthStartupComplete;
         int selected;
         string message = "", eventLog;
         float nextScan, nextNav;
@@ -38,11 +38,17 @@ namespace GradualRepair
 
         void Awake()
         {
+            try { InitializePlugin(); }
+            catch (Exception ex) { harmony?.UnpatchSelf(); ShowStartupFailure(ex); }
+        }
+        void InitializePlugin()
+        {
             RepairText.LanguageCode = () => I2.Loc.LocalizationManager.CurrentLanguageCode;
             var cfg = new ConfigFile(Path.Combine(Paths.ConfigPath, "GradualRepair.cfg"), true);
-            if (!cfg.Bind("General", "Enabled", true, "Enable staged tavern repairs. Remove the DLL to return to vanilla.").Value) { enabled = false; return; }
-            RepairText.Initialize(Path.Combine(Paths.ConfigPath, "GradualRepair", "Localization"), warning => Logger.LogWarning(warning));
-            try { NativeGame.Initialize(); Logger.LogInfo("Native compatibility contracts ready: " + NativeGame.Profile + "; diagnostic SHA256=" + NativeGame.AssemblyHash); }
+            if (!cfg.Bind("General", "Enabled", true, "Enable staged tavern repairs. Remove the DLL to return to vanilla.").Value) { health.Disable(); enabled = false; return; }
+            RepairText.Initialize(Path.Combine(Paths.ConfigPath, "GradualRepair", "Localization"), warning => { health.Warn("localization", warning); Logger.LogWarning(warning); });
+            int compiledContracts;
+            try { compiledContracts = CompiledContracts.Audit(typeof(Plugin).Assembly.Location, Path.GetDirectoryName(typeof(Save).Assembly.Location)); NativeReferences.Initialize(); NativeGame.Initialize(); Logger.LogInfo("Native compatibility contracts ready: " + NativeGame.Profile + "; diagnostic SHA256=" + NativeGame.AssemblyHash); }
             catch (Exception ex) { ShowStartupFailure(ex); return; }
 
             materialCostPercent = cfg.Bind("RepairCosts", "MaterialCostPercent", 100, new ConfigDescription("Repair material cost in percent. 100 = standard, 20 = light, 150 = hard, 0 = free. Rounded to nearest whole item, positive costs minimum 1. Native Mai delivery and salvage are unchanged. Restart game after editing.", new AcceptableValueRange<int>(0, 1000)));
@@ -53,25 +59,25 @@ namespace GradualRepair
             try
             {
                 harmony = new Harmony("s_evans.travellersrest.gradualrepair");
-                harmony.Patch(NativeGame.Hook("SetDirtScore"), new HarmonyMethod(typeof(Plugin), nameof(BeforeNativeDirtScore)), null, null, new HarmonyMethod(typeof(Plugin), nameof(EndNativeDirtScore)), null);
+                InstallPatch(NativeGame.Hook("SetDirtScore"), new HarmonyMethod(typeof(Plugin), nameof(BeforeNativeDirtScore)), null, null, new HarmonyMethod(typeof(Plugin), nameof(EndNativeDirtScore)), null);
                 Patch(NativeGame.Hook("VisitorAdmission"), null, nameof(AfterVisitorAdmission));
                 Patch(NativeGame.Hook("SetDirtLevel"), nameof(BeforeNativeDirtLevel), null);
                 Patch(typeof(Save), "LoadGame", new[] { typeof(string), typeof(SaveData) }, nameof(BeforeLoad), null);
                 Patch(typeof(Save), "SaveGame", new[] { typeof(bool), typeof(string) }, null, nameof(AfterSave));
-                harmony.Patch(AccessTools.Method(typeof(Save), "SaveGame", new[] { typeof(bool), typeof(string) }), new HarmonyMethod(typeof(Plugin), nameof(BeforeDebrisSave)), null, null, new HarmonyMethod(typeof(Plugin), nameof(EndDebrisSave)), null);
+                InstallPatch(NativeReferences.PatchTarget(typeof(Save), "SaveGame", new[] { typeof(bool), typeof(string) }), new HarmonyMethod(typeof(Plugin), nameof(BeforeDebrisSave)), null, null, new HarmonyMethod(typeof(Plugin), nameof(EndDebrisSave)), null);
                 Patch(typeof(SaveUI), "StartFadeIntoGame", new[] { typeof(bool), typeof(bool) }, nameof(NewGame), null);
                 Patch(typeof(FloorDirt), "Clean", new[] { typeof(int), typeof(float) }, nameof(BeforeInitialDirtClean), nameof(AfterInitialDirtClean));
                 Patch(typeof(FloorDirt), "DestroyFloorDirt", Type.EmptyTypes, nameof(BeforeInitialDirtRemoved), null);
                 Patch(NativeGame.Hook("PaintWall"), nameof(BeforeWallDecoration), nameof(AfterWallDecoration));
                 Patch(NativeGame.Hook("PaintFloor"), nameof(BeforeBuildFloorPaint), nameof(FloorDecorationChanged));
                 Patch(NativeGame.Hook("PaintTrim"), nameof(BeforeBuildTrimPaint), null);
-                harmony.Patch(NativeGame.Hook("UpdateFloorEdge"), new HarmonyMethod(typeof(Plugin), nameof(BeforeFloorEdge)), new HarmonyMethod(typeof(Plugin), nameof(AfterFloorEdge)), null, new HarmonyMethod(typeof(Plugin), nameof(EndFloorEdge)), null);
+                InstallPatch(NativeGame.Hook("UpdateFloorEdge"), new HarmonyMethod(typeof(Plugin), nameof(BeforeFloorEdge)), new HarmonyMethod(typeof(Plugin), nameof(AfterFloorEdge)), null, new HarmonyMethod(typeof(Plugin), nameof(EndFloorEdge)), null);
                 Patch(NativeGame.Hook("FloorEdgeNeighbor"), null, nameof(FloorEdgeNeighbor));
                 Patch(typeof(EditorActionsDBAccessor), "GetDecoTile", new[] { typeof(int) }, null, nameof(AgedEdgeDecoration));
                 Patch(NativeGame.Hook("SelectBuildingFloor"), null, nameof(AddAgedBuildingChoices));
                 Patch(NativeGame.Hook("DecorationName"), nameof(AgedBuildingName), null);
                 Patch(NativeGame.Hook("DrawDecoration"), nameof(DrawAgedBuildingTile), null);
-                var buildApply = AccessTools.Method(typeof(TavernConstructionModifications), "ApplyChanges"); harmony.Patch(buildApply, new HarmonyMethod(typeof(Plugin), nameof(BeforeBuildApply)), new HarmonyMethod(typeof(Plugin), nameof(AfterBuildApply)), null, new HarmonyMethod(typeof(Plugin), nameof(EndBuildApply)), null);
+                var buildApply = NativeReferences.PatchTarget(typeof(TavernConstructionModifications), "ApplyChanges", new[] { typeof(EditorAction), typeof(List<Vector2>), typeof(DecorationTile), typeof(ZoneType), typeof(int) }); InstallPatch(buildApply, new HarmonyMethod(typeof(Plugin), nameof(BeforeBuildApply)), new HarmonyMethod(typeof(Plugin), nameof(AfterBuildApply)), null, new HarmonyMethod(typeof(Plugin), nameof(EndBuildApply)), null);
                 Patch(typeof(TavernConstructionModifications), "RevertModifications", Type.EmptyTypes, nameof(BeforeBuildRevert), nameof(AfterBuildRevert));
                 Patch(typeof(TavernConstructionModifications), "ResetLists", Type.EmptyTypes, null, nameof(AfterBuildReset));
                 Patch(typeof(TavernConstructionModifications), "HasAnyModificationDone", Type.EmptyTypes, null, nameof(HasAgedBuildingChanges));
@@ -84,16 +90,17 @@ namespace GradualRepair
                 Patch(typeof(NewTutorialManager), "ActivateTutorialObjects", new[] { typeof(bool) }, nameof(BeforeTutorialObjectsSwitch), nameof(AfterTutorialObjectsSwitch));
                 Patch(NativeGame.Hook("FinishMai"), nameof(BeforeNativeFinish), null);
                 InstallMaiDialogueHooks();
-                Log("ready", new { version = "0.29.5", data, savePath = Application.persistentDataPath });
+                Log("ready", new { version = "1.0.0", data, savePath = Application.persistentDataPath });
+                VerifyHealthStartup(compiledContracts); healthStartupComplete = true;
             }
             catch (Exception ex) { harmony?.UnpatchSelf(); ShowStartupFailure(ex); Log("boot_error", ex.ToString()); }
         }
         void Patch(MethodInfo method, string pre, string post)
-        { harmony.Patch(method, pre == null ? null : new HarmonyMethod(typeof(Plugin), pre), post == null ? null : new HarmonyMethod(typeof(Plugin), post)); }
+        { InstallPatch(method, pre == null ? null : new HarmonyMethod(typeof(Plugin), pre), post == null ? null : new HarmonyMethod(typeof(Plugin), post)); }
         void Patch(Type type, string name, Type[] args, string pre, string post)
-        { var method = AccessTools.Method(type, name, args) ?? throw new MissingMethodException(type.Name, name); harmony.Patch(method, pre == null ? null : new HarmonyMethod(typeof(Plugin), pre), post == null ? null : new HarmonyMethod(typeof(Plugin), post)); }
+        { var method = NativeReferences.PatchTarget(type, name, args); InstallPatch(method, pre == null ? null : new HarmonyMethod(typeof(Plugin), pre), post == null ? null : new HarmonyMethod(typeof(Plugin), post)); }
         void Log(string kind, object data)
-        { try { File.AppendAllText(eventLog, JsonConvert.SerializeObject(new { utc = DateTime.UtcNow.ToString("O"), kind, data }) + "\n"); } catch (Exception ex) { Logger.LogError("Repair log: " + ex.Message); } }
+        { RecordHealthEvent(kind, data); try { File.AppendAllText(eventLog, JsonConvert.SerializeObject(new { utc = DateTime.UtcNow.ToString("O"), kind, data }) + "\n"); } catch (Exception ex) { Logger.LogError("Repair log: " + ex.Message); } }
         static void BeforeLoad(string __0)
         {
             if (self == null) return;
@@ -109,7 +116,7 @@ namespace GradualRepair
             string path = null;
             try
             {
-                string dir = (string)AccessTools.Field(typeof(Save), "loadedFileSubdirectory").GetValue(__instance);
+                string dir = (string)NativeReferences.Field(typeof(Save), "loadedFileSubdirectory").GetValue(__instance);
                 path = Path.Combine(dir, __result);
                 if (!File.Exists(path)) throw new IOException("Native save file missing");
                 self.store.Commit(path, self.state); self.CompleteLedgerSave();
@@ -182,6 +189,10 @@ namespace GradualRepair
                 }
             }
             Log("visual_bind", new { resolved = targets.Count, missing = missing.ToArray() });
+            if (missing.Count > 0) {
+                failed = true;
+                health.Fail("exterior visual references", "Required sprite targets missing: " + string.Join(", ", missing) + ". Repair operations stopped.");
+            }
         }
         bool NativeFacadeVisible() { if (exteriorOverlay != null) return true; var t = targets.Values.FirstOrDefault(x => x != null); if (t == null) return false; var root = t.transform; while (root != null && root.name != "Tutorial Tavern") root = root.parent; return root != null && !root.gameObject.activeInHierarchy; }
         readonly Dictionary<string, Sprite> damagedSprites = new Dictionary<string, Sprite>();
@@ -200,6 +211,7 @@ namespace GradualRepair
         { MaskCompletedFacade(); foreach (var pair in targets) if (pair.Value != null) { bool active = Active(); bool done = state.Completed.Contains(pair.Key.Split('#')[0]); pair.Value.sprite = !active ? originals[pair.Key] : done ? replacements[pair.Key] : damagedSprites[pair.Key]; pair.Value.transform.localPosition = !active ? originalPositions[pair.Key] : done ? repairedPositions[pair.Key] : damagedPositions[pair.Key]; } }
         void Update()
         {
+            ObserveHealth();
             if (startupFailed || !NativeGame.Ready) return;
             if (store == null) return;
             UpdateMaiVisit();
@@ -252,7 +264,7 @@ namespace GradualRepair
         void Close()
         {
             if (!open) return; open = false; repairSessionControls.EndRepairPause(); confirm = false; HideNativeRepairDialog(); HideRepairPanel(); onsiteRepair = false; ClearIndoorGuide();
-            try { repairSessionControls.EndRepairInputMap(); if (PlayerInputs.GetPlayer(1) != null) PlayerInputs.EnableKeyboardInputsAndMovement(1, this); WorldTime.BlockTickTime(wasTimeBlocked); } catch (Exception ex) { Logger.LogWarning(ex.Message); }
+            try { repairSessionControls.EndRepairInputMap(); if (PlayerInputs.GetPlayer(1) != null) PlayerInputs.EnableKeyboardInputsAndMovement(1, this); WorldTime.BlockTickTime(wasTimeBlocked); } catch (Exception ex) { failed = true; health.Fail("input restoration", ex.ToString()); Logger.LogWarning(ex.Message); }
         }
         void Choose(int index)
         {

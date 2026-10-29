@@ -1,3 +1,4 @@
+﻿using System.Linq;
 // Native access is resolved once, before patching. Structural fallback requires unique exact matches.
 using System;
 using System.Collections.Generic;
@@ -194,7 +195,7 @@ namespace GradualRepair
         {
             var name = Name(type, oldName, newName);
             var method = AccessTools.DeclaredMethod(type, name, parameters);
-            if (method == null || method.ReturnType != result || method.IsStatic != isStatic) throw new MissingMethodException("Native compatibility binding failed: " + key + " / " + type.FullName + "." + name);
+            if (method == null || method.ReturnType != result || method.IsStatic != isStatic || method.ContainsGenericParameters || !method.GetParameters().Select(p => p.ParameterType).SequenceEqual(parameters)) throw new MissingMethodException("Native compatibility binding failed: " + key + " / " + type.FullName + "." + name);
             hooks.Add(key, method);
         }
         static Func<MaiNPC> maiInstance;
@@ -290,7 +291,7 @@ namespace GradualRepair
         {
             var property = AccessTools.Property(type, Name(type, oldName, newName));
             var getter = property?.GetGetMethod(true);
-            if (getter == null || getter.IsStatic != isStatic || getter.ReturnType != result) throw new MissingMemberException("Native compatibility property failed: " + type.Name + "." + oldName);
+            if (getter == null || getter.IsStatic != isStatic || getter.ReturnType != result || getter.GetParameters().Length != 0) throw new MissingMemberException("Native compatibility property failed: " + type.Name + "." + oldName);
             return Delegate.CreateDelegate(delegateType, getter);
         }
     }

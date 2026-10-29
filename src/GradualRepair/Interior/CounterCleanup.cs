@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using HarmonyLib;
 using UnityEngine;
@@ -94,7 +94,7 @@ namespace GradualRepair
             if (found.sprite.rect.width != 240 || found.sprite.rect.height != 56) { counterFailed = true; Log("counter_bind_error", new { reason = "Unexpected counter dimensions", sprite = found.sprite.name }); return; }
             counter = found; counterOriginal = counter.sprite; counterPlaceable = bar.placeable;
             if (counterPlaceable == null) { counterFailed = true; Log("counter_bind_error", "Placeable missing"); return; }
-            var prefabField = AccessTools.Field(typeof(DoWork), "progressorPrefab");
+            var prefabField = NativeReferences.Field(typeof(DoWork), "progressorPrefab");
             GameObject workPrefab = null;
             foreach (var dirt in Resources.FindObjectsOfTypeAll<FloorDirt>())
             {
@@ -106,7 +106,7 @@ namespace GradualRepair
             counterWorkAnchor = workRoot.transform;
             counterWork = workRoot.AddComponent<DoWork>();
             prefabField.SetValue(counterWork, workPrefab);
-            AccessTools.Field(typeof(DoWork), "workBarPosition").SetValue(counterWork, counterWorkAnchor);
+            NativeReferences.Field(typeof(DoWork), "workBarPosition").SetValue(counterWork, counterWorkAnchor);
             counterWork.inWorkArea = true;
             if (counterSprite == null)
             {

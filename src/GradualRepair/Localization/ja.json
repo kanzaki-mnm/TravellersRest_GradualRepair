@@ -9,8 +9,6 @@
   "save.commit-help": "\nゲームを終了せず、保存の再試行をしてください。\n",
   "repair.payment-cancelled": "支払いを中止しました。",
   "repair.rollback-failed": "通常セーブせず再ロードしてください。",
-  "save.retry": "修繕進捗の保存を再試行",
-  "save.retry-failed": "保存の再試行に失敗しました。ゲームを終了せず、保存先の空き容量・権限を確認してください。\n",
   "mailbox.repair-plan": "酒場の修繕計画",
   "mai.delivery-before": "全部用意したのだな？ <wiggle>素晴らしい！</wiggle> では、酒場を営むのに必要なところを整えるとしよう。しばし待っておくのだぞ。",
   "mai.delivery-after": "よし、これでひとまず酒場を営めるだろう！ まだ手を入れるところはあるが、少しずつ整えていけばよい。どんな店になるか、楽しみにしているぞ。",
@@ -68,6 +66,5 @@
   "interior.wall-kitchen-middle-right": "厨房・中央右の石壁",
   "interior.wall-kitchen-right": "厨房・右側の石壁",
   "repair.confirm-question": "{0}を修繕しますか？",
-  "safety.warning-title": "GradualRepair — 確認が必要です",
   "compatibility.stopped": "ゲームとの互換性を確認できないため、GradualRepairを停止しています。保存せず終了し、対応版のModを確認してください。詳しくはBepInEx/LogOutput.logをご覧ください。"
 }

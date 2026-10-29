@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -158,12 +158,12 @@ namespace GradualRepair
             var original = (RectTransform)source.transform;
             string[] materialFields = { "playerPlanksTextMesh", "playerNailsTextMesh", "playerStonesTextMesh", "playerMortarTextMesh" };
             string[] items = { "planks", "nails", "stones", "mortar" };
-            var paths = materialFields.Select(n => CostPath(original, ((TextMeshProUGUI)AccessTools.Field(typeof(ConstructionPlayerInfo), n).GetValue(source)).transform)).ToArray();
-            walletResourceIds = items.Select(n => (int)AccessTools.Field(typeof(Item), "id").GetValue(AccessTools.Field(typeof(ConstructionPlayerInfo), n).GetValue(source))).ToArray();
+            var paths = materialFields.Select(n => CostPath(original, ((TextMeshProUGUI)NativeReferences.Field(typeof(ConstructionPlayerInfo), n).GetValue(source)).transform)).ToArray();
+            walletResourceIds = items.Select(n => (int)NativeReferences.Field(typeof(Item), "id").GetValue(NativeReferences.Field(typeof(ConstructionPlayerInfo), n).GetValue(source))).ToArray();
             var sourceMoney = source.GetComponentInChildren<PlayerMoneyUI>(true);
             if (sourceMoney == null) throw new InvalidOperationException("Native construction money display unavailable");
             string[] moneyFields = { "goldText", "silverText", "copperText" };
-            var moneyPaths = moneyFields.Select(n => CostPath(original, ((TextMeshProUGUI)AccessTools.Field(typeof(MoneyUI), n).GetValue(sourceMoney)).transform)).ToArray();
+            var moneyPaths = moneyFields.Select(n => CostPath(original, ((TextMeshProUGUI)NativeReferences.Field(typeof(MoneyUI), n).GetValue(sourceMoney)).transform)).ToArray();
             var host = UiRect("Construction Wallet Host", repairRoot, fieldWidth / 2, 8, 1, 1); host.gameObject.SetActive(false);
             var bar = Instantiate(original, host, false); bar.name = "Native Construction Wallet";
             // Strip controllers before activation: no balance subscriptions, material
@@ -175,7 +175,7 @@ namespace GradualRepair
             bar.anchorMin = bar.anchorMax = new Vector2(0, 1); bar.pivot = new Vector2(.5f, 1); bar.anchoredPosition = Vector2.zero; bar.sizeDelta = new Vector2(458, 37); bar.localScale = Vector3.one * (800f / 450f);
             ownedResources.Clear(); foreach (var path in paths) ownedResources.Add(bar.Find(path).GetComponent<TextMeshProUGUI>());
             ownedCoinValues = bar.Find("PlayerMoney").gameObject.AddComponent<MoneyUI>();
-            for (int i = 0; i < 3; i++) AccessTools.Field(typeof(MoneyUI), moneyFields[i]).SetValue(ownedCoinValues, bar.Find(moneyPaths[i]).GetComponent<TextMeshProUGUI>());
+            for (int i = 0; i < 3; i++) NativeReferences.Field(typeof(MoneyUI), moneyFields[i]).SetValue(ownedCoinValues, bar.Find(moneyPaths[i]).GetComponent<TextMeshProUGUI>());
             foreach (var graphic in bar.GetComponentsInChildren<Graphic>(true)) graphic.raycastTarget = false;
             bar.gameObject.SetActive(true); host.gameObject.SetActive(true);
         }
@@ -189,7 +189,7 @@ namespace GradualRepair
         {
             var source = Resources.FindObjectsOfTypeAll<FarmConstructionActionInfoUI>().FirstOrDefault(v => v.titleText != null && v.planksCost != null);
             if (source == null) throw new InvalidOperationException("Native farm construction cost UI unavailable");
-            var original = (RectTransform)AccessTools.Field(typeof(FarmConstructionActionInfoUI), "contentRectTransform").GetValue(source);
+            var original = (RectTransform)NativeReferences.Field(typeof(FarmConstructionActionInfoUI), "contentRectTransform").GetValue(source);
             var fields = new[] { source.planksCost, source.nailsCost, source.stonesCost, source.mortarCost, source.goldCost, source.silverCost };
             var paths = fields.Select(v => CostPath(original, v.transform)).ToArray(); var titlePath = CostPath(original, source.titleText.transform);
             // Clone only the presentation subtree, never the live UIWindow/controller.
@@ -209,8 +209,8 @@ namespace GradualRepair
             compactCosts = paths.Select(p => repairCostView.Find(p).GetComponent<TextMeshProUGUI>()).ToArray();
             repairTitle = repairCostView.Find(titlePath).GetComponent<TextMeshProUGUI>(); repairTitle.font = repairFont;
             repairTitle.enableWordWrapping = false; repairTitle.enableAutoSizing = true; repairTitle.fontSizeMax = repairTitle.fontSize; repairTitle.fontSizeMin = repairTitle.fontSize * .65f;
-            compactNormal = (Color)AccessTools.Field(typeof(FarmConstructionActionInfoUI), "normalColor").GetValue(source);
-            compactInvalid = (Color)AccessTools.Field(typeof(FarmConstructionActionInfoUI), "invalidColor").GetValue(source);
+            compactNormal = (Color)NativeReferences.Field(typeof(FarmConstructionActionInfoUI), "normalColor").GetValue(source);
+            compactInvalid = (Color)NativeReferences.Field(typeof(FarmConstructionActionInfoUI), "invalidColor").GetValue(source);
             // Native parent scaling is absent from the cloned subtree. Use our 800-high UI coordinates.
             compactScale = 800f / 450f;
             repairCostView.anchorMin = repairCostView.anchorMax = new Vector2(.5f, 1); repairCostView.pivot = new Vector2(.5f, 1); repairCostView.anchoredPosition = Vector2.zero; repairCostView.sizeDelta = new Vector2(150, 64); repairCostView.localScale = Vector3.one * compactScale;
@@ -248,7 +248,7 @@ namespace GradualRepair
             }
             foreach (var ui in Resources.FindObjectsOfTypeAll<PostboxUI>())
             {
-                var prefab = HarmonyLib.AccessTools.Field(typeof(PostboxUI), "elementPrefab").GetValue(ui) as GameObject;
+                var prefab = NativeReferences.Field(typeof(PostboxUI), "elementPrefab").GetValue(ui) as GameObject;
                 var background = MailboxRowBackground(prefab); if (background != null) return background;
             }
             throw new InvalidOperationException("Native mailbox row background unavailable");

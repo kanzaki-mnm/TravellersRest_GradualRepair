@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,14 +66,14 @@ namespace GradualRepair
             }
             if (root == null && tutorialParent != null) root = tutorialParent.transform;
             if (root == null) return;
-            var prefabField = AccessTools.Field(typeof(DoWork), "progressorPrefab");
+            var prefabField = NativeReferences.Field(typeof(DoWork), "progressorPrefab");
             GameObject prefab = null; float work = 0, speed = 0;
             foreach (var dirt in Resources.FindObjectsOfTypeAll<FloorDirt>())
             {
                 var source = dirt.GetComponent<DoWork>();
                 if (source == null) continue;
                 var candidate = prefabField.GetValue(source) as GameObject;
-                float amount = (float)AccessTools.Field(typeof(FloorDirt), "workNeeded").GetValue(dirt);
+                float amount = (float)NativeReferences.Field(typeof(FloorDirt), "workNeeded").GetValue(dirt);
                 if (candidate == null || amount <= 0) continue;
                 prefab = candidate; work = amount; if (!dirt.tutorialDirt) break;
             }
@@ -119,7 +119,7 @@ namespace GradualRepair
             }
             if (debrisParts.Count == 0) throw new InvalidOperationException("No supported debris targets resolved");
             var owner = new GameObject("GradualRepair Debris Work"); owner.transform.SetParent(transform, false); debrisAnchor = owner.transform;
-            debrisWork = owner.AddComponent<DoWork>(); prefabField.SetValue(debrisWork, prefab); AccessTools.Field(typeof(DoWork), "workBarPosition").SetValue(debrisWork, debrisAnchor); debrisWork.inWorkArea = true;
+            debrisWork = owner.AddComponent<DoWork>(); prefabField.SetValue(debrisWork, prefab); NativeReferences.Field(typeof(DoWork), "workBarPosition").SetValue(debrisWork, debrisAnchor); debrisWork.inWorkArea = true;
             var positions = new List<object>(); foreach (var part in debrisParts) positions.Add(new { part.Id, position = part.Bounds.center.ToString("F3"), active = part.Root.gameObject.activeInHierarchy });
             Log("debris_bound", new { count = debrisParts.Count, smallSeconds = debrisFloorSeconds, largeSeconds = DebrisRules.Duration(debrisFloorSeconds, true), nativeWork = work, nativeSpeed = speed, positions });
         }

@@ -6,7 +6,7 @@ Repair a window, patch a hole in the floor, or clear away clutter and discover r
 
 **You can postpone repairs and still progress through the normal story.** Mai's material delivery is separate from the mod's cleaning, indoor repairs, and exterior restoration.
 
-Author: s_evans · Version: 0.29.4
+Author: s_evans · Version: 1.0.0
 
 ## Features
 
@@ -229,3 +229,7 @@ dotnet run --project src/GradualRepairChecks -c Release '-p:GameDir=C:\path\to\T
 Game assemblies, BepInEx binaries, saves, logs, and investigation tools are excluded from this repository.
 
 See the [source layout](src/GradualRepair/README.md) for development details. `sandbox`, `research`, native game DLLs, and test supply plugins are not required for normal use.
+
+## Mod Manager health reporting
+
+Supports the optional Travellers Rest Mod Manager health API V1. No manager dependency is required. Diagnostics inspect required game references and owned patches; runtime errors are included in the cached report. See [diagnostic scope and limits](src/GradualRepair/HEALTH.md).

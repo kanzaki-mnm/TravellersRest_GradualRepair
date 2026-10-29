@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using HarmonyLib;
 using PixelCrushers.DialogueSystem;
@@ -23,16 +23,22 @@ namespace GradualRepair
             // New dialogue contracts are isolated from the existing repair hooks.
             try
             {
-                NativeGame.InitializeMaiContracts();
                 Patch(NativeGame.MaiConversation, null, nameof(AfterMaiConversationSelected));
                 Patch(NativeGame.MaiAvailable, null, nameof(AfterMaiAvailable));
                 Patch(NativeGame.MaiOpened, null, nameof(AfterMaiTavernOpened));
                 Patch(typeof(DialogueNPCBase), "OnConversationLineEnd", new[] { typeof(Subtitle) }, null, nameof(AfterMaiLineEnded));
                 Patch(typeof(MaiNPC), "OnConversationEnd", new[] { typeof(Transform) }, null, nameof(AfterMaiConversationEnded));
                 foreach (var name in new[] { "currentDialogueText", "currentLocalizedDialogueText", "subtitleText" })
-                    Patch(AccessTools.PropertyGetter(typeof(DialogueEntry), name), null, nameof(AfterMaiText));
+                    Patch(CheckedDialogueGetter(name), null, nameof(AfterMaiText));
             }
             catch (Exception ex) { maiVisitFailed = true; Logger.LogError("Mai dialogue feature disabled: " + ex); }
+        }
+        static System.Reflection.MethodInfo CheckedDialogueGetter(string name)
+        {
+            var method = AccessTools.PropertyGetter(typeof(DialogueEntry), name);
+            if (method == null || method.IsStatic || method.ReturnType != typeof(string) || method.GetParameters().Length != 0)
+                throw new MissingMethodException("Dialogue getter contract: " + name);
+            return method;
         }
         bool MaiPending() => Active() && !failed && NativeComplete() && !state.MaiCongratulationsHeard && RepairModel.Jobs.All(j => state.Completed.Contains(j.Id));
         static bool MaiStoryPriority(string title, Conversation conversation)

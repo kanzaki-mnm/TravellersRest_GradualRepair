@@ -1,4 +1,4 @@
-using HarmonyLib;
+﻿using HarmonyLib;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -146,7 +146,7 @@ namespace GradualRepair
             var fee = (RectTransform)onsiteFee.transform; fee.anchorMin = fee.anchorMax = new Vector2(.5f, 1); fee.pivot = new Vector2(.5f, 1); fee.anchoredPosition = new Vector2(0, -(onsiteMaterialY + 44));
             LayoutRebuilder.ForceRebuildLayoutImmediate((RectTransform)onsiteDialog.content.transform); Canvas.ForceUpdateCanvases(); BuildOnsiteWallet();
         }
-        static TextMeshProUGUI MoneyText(MoneyUI money, string field) => AccessTools.Field(typeof(MoneyUI), field).GetValue(money) as TextMeshProUGUI;
+        static TextMeshProUGUI MoneyText(MoneyUI money, string field) => NativeReferences.Field(typeof(MoneyUI), field).GetValue(money) as TextMeshProUGUI;
         static bool OwnMoneyTexts(MoneyUI money) => new[] { "goldText", "silverText", "copperText" }.All(f => MoneyText(money, f) != null && MoneyText(money, f).transform.IsChildOf(money.transform));
         static bool MoneyVisualOnly(MoneyUI money) => money.GetType() == typeof(MoneyUI) && money.GetComponentsInChildren<MonoBehaviour>(true).All(b => b is MoneyUI || b is Graphic || b is LayoutGroup || b is ContentSizeFitter || b is AspectRatioFitter || b is LayoutElement || b is Mask || b is RectMask2D);
         MoneyUI NativeShopWallet() => onsiteMoneySource != null ? onsiteMoneySource : onsiteMoneySource = Resources.FindObjectsOfTypeAll<MoneyUI>().FirstOrDefault(m => m.name == "PlayerMoney" && m.transform.parent.name == "MoneyPanel Variant" && m.transform.parent.parent.name == "OptionsPanel" && m.transform.parent.parent.parent.parent.name == "ShopUI" && OwnMoneyTexts(m)) ?? throw new InvalidOperationException("Native shop wallet unavailable");
@@ -169,7 +169,7 @@ namespace GradualRepair
             foreach (string field in new[] { "goldText", "silverText", "copperText" })
             {
                 var original = MoneyText(source, field); string path = original.name; for (var t = original.transform.parent; t != source.transform; t = t.parent) path = t.name + "/" + path;
-                AccessTools.Field(typeof(MoneyUI), field).SetValue(money, rect.Find(path).GetComponent<TextMeshProUGUI>());
+                NativeReferences.Field(typeof(MoneyUI), field).SetValue(money, rect.Find(path).GetComponent<TextMeshProUGUI>());
             }
             return money;
         }
@@ -214,7 +214,7 @@ namespace GradualRepair
         {
             if (onsiteTemplate != null) return onsiteTemplate;
             var pause = Resources.FindObjectsOfTypeAll<PauseMenuUI>().FirstOrDefault(w => w.gameObject.scene.IsValid() && w.gameObject.scene.isLoaded && w._playerNum == 1);
-            onsiteTemplate = pause == null ? null : AccessTools.Field(typeof(PauseMenuUI), "yesNoDialogue").GetValue(pause) as YesNoDialogueUI;
+            onsiteTemplate = pause == null ? null : NativeReferences.Field(typeof(PauseMenuUI), "yesNoDialogue").GetValue(pause) as YesNoDialogueUI;
             if (onsiteTemplate == null) onsiteTemplate = Resources.FindObjectsOfTypeAll<YesNoDialogueUI>().FirstOrDefault(w => w != null && w.gameObject.scene.IsValid() && w.gameObject.scene.isLoaded && w._playerNum == 1 && w.boxText != null && w.yesButton != null && w.noButton != null && !w.name.StartsWith("GradualRepair"));
             return onsiteTemplate ?? throw new InvalidOperationException("Native confirmation dialog unavailable");
         }
@@ -227,7 +227,7 @@ namespace GradualRepair
         TextMeshProUGUI GetCraftingQuantity()
         {
             if (onsiteCraftingQuantity != null) return onsiteCraftingQuantity;
-            return onsiteCraftingQuantity = Resources.FindObjectsOfTypeAll<RecipeElementUI>().SelectMany(recipe => (SlotUIRecipe[])AccessTools.Field(typeof(RecipeElementUI), "inputSlots").GetValue(recipe) ?? Array.Empty<SlotUIRecipe>()).Where(v => v != null && v.stackText != null && v.stackText.font != null).Select(v => v.stackText).FirstOrDefault() ?? throw new InvalidOperationException("Native crafting quantity unavailable");
+            return onsiteCraftingQuantity = Resources.FindObjectsOfTypeAll<RecipeElementUI>().SelectMany(recipe => (SlotUIRecipe[])NativeReferences.Field(typeof(RecipeElementUI), "inputSlots").GetValue(recipe) ?? Array.Empty<SlotUIRecipe>()).Where(v => v != null && v.stackText != null && v.stackText.font != null).Select(v => v.stackText).FirstOrDefault() ?? throw new InvalidOperationException("Native crafting quantity unavailable");
         }
         TMP_SpriteAsset GetOnsiteCoins()
         {

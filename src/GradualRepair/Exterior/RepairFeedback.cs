@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -11,7 +11,7 @@ namespace GradualRepair
         void PlayExteriorRepairFeedback(RepairJob job)
         {
             try { int index = Array.IndexOf(RepairModel.Jobs, job); if (index < 0 || !repairPreview.IsCreated || repairRoot == null) return; var area = FieldRect(index); StopExteriorRepairFeedback(); repairFeedback = StartCoroutine(ExteriorRepairFeedback(area)); }
-            catch (Exception ex) { Logger.LogWarning("Repair feedback unavailable: " + ex.Message); }
+            catch (Exception ex) { health.Warn("repair feedback", ex.Message); Logger.LogWarning("Repair feedback unavailable: " + ex.Message); }
         }
         IEnumerator ExteriorRepairFeedback(Rect area)
         {
@@ -24,7 +24,7 @@ namespace GradualRepair
             while (open && Time.unscaledTime - start < .85f)
             {
                 float elapsed = Time.unscaledTime - start, t = elapsed / .85f;
-                if (hit < 3 && elapsed >= hit * .18f) { if (sound != null && clips != null && clips.Length > 0) { var clip = clips[hit % clips.Length]; if (clip != null) { try { sound.PlayOneShot(clip, true, null, null, .4f); } catch (Exception ex) { Logger.LogWarning("Repair sound unavailable: " + ex.Message); } } } hit++; }
+                if (hit < 3 && elapsed >= hit * .18f) { if (sound != null && clips != null && clips.Length > 0) { var clip = clips[hit % clips.Length]; if (clip != null) { try { sound.PlayOneShot(clip, true, null, null, .4f); } catch (Exception ex) { health.Warn("repair sound", ex.Message); Logger.LogWarning("Repair sound unavailable: " + ex.Message); } } } hit++; }
                 for (int i = 0; i < puffs.Length; i++) { var r = (RectTransform)puffs[i].transform; r.anchoredPosition = origins[i] + new Vector2((i % 2 == 0 ? -1 : 1) * t * 16, t * 33); r.sizeDelta = Vector2.one * (16 + Mathf.Floor(t * 3) * 4); puffs[i].color = new Color(1, 1, 1, (1 - t) * .8f); }
                 yield return null;
             }

@@ -9,8 +9,6 @@
   "save.commit-help": "\nKeep the game open and retry saving.\n",
   "repair.payment-cancelled": "Payment cancelled.",
   "repair.rollback-failed": "Reload without saving the game.",
-  "save.retry": "Retry saving repair progress",
-  "save.retry-failed": "Could not save again. Keep the game open and check free disk space and write permissions.\n",
   "mailbox.repair-plan": "Tavern repairs",
   "mai.delivery-before": "You have everything ready? <wiggle>Splendid!</wiggle> Then let us see to what this tavern needs to get going. Wait here a moment.",
   "mai.delivery-after": "There, you should be able to run the tavern for now! There is still work to be done, but you can put things right little by little. I look forward to seeing what you make of it.",
@@ -68,6 +66,5 @@
   "interior.wall-kitchen-middle-right": "Kitchen: middle-right wall",
   "interior.wall-kitchen-right": "Kitchen: right wall",
   "repair.confirm-question": "Repair {0}?",
-  "safety.warning-title": "GradualRepair — Attention required",
   "compatibility.stopped": "GradualRepair is stopped because game compatibility could not be verified. Exit without saving and check for a compatible mod version. See BepInEx/LogOutput.log for details."
 }

@@ -1,3 +1,4 @@
+﻿using System;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -11,11 +12,15 @@ namespace GradualRepair
         internal void BeginRepairInputMap()
         {
             var input = PlayerInputs.GetPlayer(1);
-            var previous = (string)AccessTools.Field(typeof(PlayerInputs), "_currentMapSelected").GetValue(input);
+            var previous = (string)NativeReferences.Field(typeof(PlayerInputs), "_currentMapSelected").GetValue(input);
             // A just-closed native mailbox still reports UI until its next-frame map switch.
             repairPreviousMap = previous == "UI" ? "Game" : previous;
             var module = EventSystem.current == null ? null : EventSystem.current.currentInputModule;
-            verticalNavigationAxis = module == null ? null : AccessTools.Property(module.GetType(), "verticalAxis")?.GetValue(module) as string;
+            var axisProperty = module == null ? null : AccessTools.Property(module.GetType(), "verticalAxis");
+            var axisGetter = axisProperty?.GetGetMethod(true);
+            if (axisProperty != null && (axisProperty.PropertyType != typeof(string) || axisGetter == null || axisGetter.IsStatic || axisGetter.GetParameters().Length != 0))
+                throw new InvalidOperationException("Input module verticalAxis contract mismatch");
+            verticalNavigationAxis = axisProperty?.GetValue(module) as string;
             input.SwitchMapCategory("UI");
         }
         internal float VerticalNavigation()
@@ -27,7 +32,7 @@ namespace GradualRepair
         {
             if (repairPreviousMap == null) return;
             var input = PlayerInputs.GetPlayer(1);
-            if ((string)AccessTools.Field(typeof(PlayerInputs), "_currentMapSelected").GetValue(input) != "UI") input.SwitchMapCategory("UI");
+            if ((string)NativeReferences.Field(typeof(PlayerInputs), "_currentMapSelected").GetValue(input) != "UI") input.SwitchMapCategory("UI");
         }
         internal void EndRepairInputMap()
         {
