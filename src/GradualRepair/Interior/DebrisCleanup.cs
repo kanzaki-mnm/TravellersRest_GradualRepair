@@ -40,7 +40,7 @@ namespace GradualRepair
             var hovered = NativeGame.Hovered(HoverObject.GetPlayer(1)) as Component;
             return NativePriorityObject(go) || NativePriorityObject(focused) || NativePriorityObject(hovered == null ? null : hovered.gameObject);
         }
-        static bool NativePriorityObject(GameObject go) => go != null && (go.GetComponentInParent<DialogueNPCBase>() != null || go.GetComponentInParent<HumanNPC>() != null || go.GetComponentInParent<FloorDirt>() != null || go.GetComponentInParent<Table>() != null);
+        static bool NativePriorityObject(GameObject go) => go != null && (go.GetComponentInParent<BeerTap>() != null || go.GetComponentInParent<DialogueNPCBase>() != null || go.GetComponentInParent<HumanNPC>() != null || go.GetComponentInParent<FloorDirt>() != null || go.GetComponentInParent<Table>() != null);
         void BindDebris()
         {
             if (debrisParts.Count > 0 && debrisParts[0].Root != null) return;

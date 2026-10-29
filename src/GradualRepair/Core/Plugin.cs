@@ -1,4 +1,4 @@
-﻿using BepInEx;
+using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
 using Newtonsoft.Json;
@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace GradualRepair
 {
-    [BepInPlugin("s_evans.travellersrest.gradualrepair", "Gradual Repair", "0.29.4")]
+    [BepInPlugin("s_evans.travellersrest.gradualrepair", "Gradual Repair", "0.29.5")]
     [DefaultExecutionOrder(-1000)]
     public sealed partial class Plugin : BaseUnityPlugin
     {
@@ -84,7 +84,7 @@ namespace GradualRepair
                 Patch(typeof(NewTutorialManager), "ActivateTutorialObjects", new[] { typeof(bool) }, nameof(BeforeTutorialObjectsSwitch), nameof(AfterTutorialObjectsSwitch));
                 Patch(NativeGame.Hook("FinishMai"), nameof(BeforeNativeFinish), null);
                 InstallMaiDialogueHooks();
-                Log("ready", new { version = "0.29.4", data, savePath = Application.persistentDataPath });
+                Log("ready", new { version = "0.29.5", data, savePath = Application.persistentDataPath });
             }
             catch (Exception ex) { harmony?.UnpatchSelf(); ShowStartupFailure(ex); Log("boot_error", ex.ToString()); }
         }
@@ -225,8 +225,11 @@ namespace GradualRepair
             if (!onsiteRepair && Time.unscaledTime >= nextNav)
             {
                 Vector2 direction = Vector2.zero;
-                if (input.GetButtonDown(ActionType.Down) || Input.GetKeyDown(KeyCode.DownArrow)) direction = Vector2.down;
-                else if (input.GetButtonDown(ActionType.Up) || Input.GetKeyDown(KeyCode.UpArrow)) direction = Vector2.up;
+                // Controller UI navigation can be an axis binding, for which
+                // GetButtonDown(Up/Down) does not report a directional press.
+                float vertical = repairSessionControls.VerticalNavigation();
+                if (input.GetButtonDown(ActionType.Down) || vertical < -.5f || Input.GetKeyDown(KeyCode.DownArrow)) direction = Vector2.down;
+                else if (input.GetButtonDown(ActionType.Up) || vertical > .5f || Input.GetKeyDown(KeyCode.UpArrow)) direction = Vector2.up;
                 else if (input.GetButtonDown(ActionType.Left) || Input.GetKeyDown(KeyCode.LeftArrow)) direction = Vector2.left;
                 else if (input.GetButtonDown(ActionType.Right) || Input.GetKeyDown(KeyCode.RightArrow)) direction = Vector2.right;
                 if (direction != Vector2.zero) { NavigateField(direction); nextNav = Time.unscaledTime + .15f; }

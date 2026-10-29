@@ -1,18 +1,27 @@
 using HarmonyLib;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace GradualRepair
 {
     internal sealed class RepairSessionControls
     {
         string repairPreviousMap;
+        string verticalNavigationAxis;
         internal void BeginRepairInputMap()
         {
             var input = PlayerInputs.GetPlayer(1);
             var previous = (string)AccessTools.Field(typeof(PlayerInputs), "_currentMapSelected").GetValue(input);
             // A just-closed native mailbox still reports UI until its next-frame map switch.
             repairPreviousMap = previous == "UI" ? "Game" : previous;
+            var module = EventSystem.current == null ? null : EventSystem.current.currentInputModule;
+            verticalNavigationAxis = module == null ? null : AccessTools.Property(module.GetType(), "verticalAxis")?.GetValue(module) as string;
             input.SwitchMapCategory("UI");
+        }
+        internal float VerticalNavigation()
+        {
+            var input = PlayerInputs.GetPlayer(1);
+            return string.IsNullOrEmpty(verticalNavigationAxis) ? input.GetAxis(ActionType.VerticalMove) : input.GetAxis(verticalNavigationAxis);
         }
         internal void MaintainRepairInputMap()
         {

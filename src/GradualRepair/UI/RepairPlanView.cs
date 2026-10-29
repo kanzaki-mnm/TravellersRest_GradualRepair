@@ -349,12 +349,20 @@ namespace GradualRepair
         void SetupRepairPad(GameObject node, ActionType action, float y)
         {
             var rect = (RectTransform)node.transform; rect.anchorMin = rect.anchorMax = new Vector2(0, 1); rect.pivot = new Vector2(0, 1); rect.anchoredPosition = new Vector2(1, -y); var image = node.GetComponent<Image>(); image.raycastTarget = false;
-            var binding = node.AddComponent<GamepadSprite>(); AccessTools.Field(typeof(GamepadSprite), "actionType").SetValue(binding, action); AccessTools.Field(typeof(GamepadSprite), "image").SetValue(binding, image);
+            // GamepadSprite.SetNativeSize uses texture pixels, which are much larger
+            // than this cloned guide's canvas units. Refresh the sprite ourselves.
+            image.sprite = ButtonsContext.GetPlayer(1).GetSpriteWithActionType(action);
+            image.preserveAspect = true; rect.sizeDelta = new Vector2(18, 18); rect.localScale = Vector3.one;
         }
         void UpdateRepairGuideDevice()
         {
             if (repairGuides == null) return; bool pad = data.Gamepad;
             repairAcceptKey.SetActive(!pad); repairCancelKey.SetActive(!pad); repairAcceptPad.SetActive(pad && repairPayButton.gameObject.activeSelf); repairCancelPad.SetActive(pad);
+            if (pad)
+            {
+                repairAcceptPad.GetComponent<Image>().sprite = ButtonsContext.GetPlayer(1).GetSpriteWithActionType(ActionType.UIInteract);
+                repairCancelPad.GetComponent<Image>().sprite = ButtonsContext.GetPlayer(1).GetSpriteWithActionType(ActionType.UIBack);
+            }
         }
         bool RefreshCompactRepairCosts(bool complete)
         {
